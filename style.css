@@ -3,3 +3,7 @@
 .escambo-top-block .column {
   float: left;
 }
+
+.sniffer-plugin-interests-block {
+  clear: both;
+}
