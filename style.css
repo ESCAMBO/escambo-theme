@@ -1,9 +1,21 @@
 @import url(../base/style.css);
 
-.escambo-top-block .column {
-  float: left;
+body {
+  background: none;
 }
 
-.profile-homepage .sniffer-plugin-interests-block {
-  clear: both;
+#top-search {
+  display: none;
+}
+
+#navigation {
+  display: none;
+}
+
+#theme-header {
+  height: auto;
+}
+
+#wrap-2 {
+  border: none;
 }
