@@ -1,0 +1,75 @@
+@import url(../base/style.css);
+
+.box-padding {
+  padding: 10px;
+  display: inline-block;
+}
+
+body {
+  background: none;
+}
+
+#top-search {
+  display: none;
+}
+
+#navigation {
+  display: none;
+}
+
+#wrap-2 {
+  border: none;
+}
+
+#user {
+  text-align: auto;
+  position: inherit;
+  right: 0;
+  display: inline;
+  float: right;
+}
+#user a {
+  color: auto;
+}
+
+.header-button {
+  @extend .box-padding;
+  background: #F6FCA6;
+  margin: 0 2px;
+  font-weight: bold;
+}
+
+#theme-header {
+  height: auto;
+  position: relative;
+  height: 160px;
+}
+
+#header-links { 
+  float: left;
+  margin-left: 20px;
+}
+#user a, #header-links a { 
+  @extend .header-button;
+}
+#header-links a {
+  z-index: 10;
+  position: relative;
+  opacity: .7;
+}
+
+#theme-header h1 {
+  color: #E5F600;
+  font-size: 135px;
+  line-height: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+#header-space {
+  height: 120px;
+}
+
+

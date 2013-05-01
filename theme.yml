@@ -1,4 +1,4 @@
-name: "Noosfero"
-layout: "application-ng"
+name: "ESCAMBO"
+layout: "escambo"
 jquery_theme: "smoothness_mod"
 icon_theme: [default, pidgin]

@@ -1,6 +1,21 @@
 <h1>escambo</h1>
+
+<div id='header-space'>
+</div>
+
+<div id='header-links'>
 <%= link_to _('home'), '/' %>
 <%= link_to _('culture points'), :controller => :search, :action => :enterprises %>
 <%= link_to _('offers, interests and knowledges'), :controller => :search, :action => :enterprises %>
 <%= link_to _('how it works'), :controller => :search, :action => :enterprises %>
+</div>
 
+<div id="user">
+  <span class='logged-in' style='display: none;'>
+    <%= usermenu_logged_in %>
+  </span>
+  <span class='not-logged-in' style='display: none'>
+    <%= link_to _('sign up'), :controller => 'account', :action => 'signup' %>
+    <%= thickbox_inline_popup_link _('login'), login_url, 'inlineLoginBox' %>
+  </span>
+</div>
