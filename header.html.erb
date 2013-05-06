@@ -23,7 +23,9 @@
             <%= link_to user.name, :controller => :profile_editor, :profile => user.identifier, :action => :edit %>
           </div>
           <div>
-            <%= select "enterprise", "selected", user.memberships.collect{ |p| [ p.name, p.id ] }, {:include_blank => _('None')} %>
+            <%= select "enterprise", "selected", user.memberships.collect{ |p| [ p.name, p.id ] },
+              {:include_blank => _('None'), :selected => session[:active_organization]},
+              :onclick => "jQuery.post('#{url_for :controller => :account, :action => :select_active_organization}', {profile_id: this.value});" %>
           </div>
           <div>
             <%= link_to _('Log out'), :controller => :account, :action => :logout %>
@@ -40,4 +42,6 @@
       <%= render :file => 'account/login', :locals => { :is_thickbox => true } %>
     </div>
   </div>
+
+  <%= render :file => 'active_organization' %>
 </div>

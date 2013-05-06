@@ -36,6 +36,10 @@ body {
   font-weight: bold;
   text-decoration: none;
   color: black;
+  &:hover {
+    background: #7F005C;
+    color: white;
+  }
 }
 
 #theme-header {
@@ -110,5 +114,8 @@ body {
   width: 160px;
 }
 
+#content {
+  margin-top: 0;
+}
 
 
