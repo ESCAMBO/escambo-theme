@@ -28,28 +28,62 @@ body {
   display: inline;
   float: right;
 }
-#user a {
-  color: auto;
-}
 
 .header-button {
   @extend .box-padding;
   background: #F6FCA6;
   margin: 0 2px;
   font-weight: bold;
+  text-decoration: none;
+  color: black;
 }
 
 #theme-header {
   height: auto;
   position: relative;
+}
+#theme-header .logged {
+  height: 90px;
+}
+#theme-header .not-logged {
   height: 160px;
+}
+
+#theme-header h1 {
+  color: #E5F600;
+  line-height: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+#theme-header .logged {
+  h1 {
+    font-size: 100px;
+    margin-top: 40px;
+  }
+  #user .not-logged-in, #header-links { 
+    margin-top: 50px;
+  }
+}
+
+#theme-header .not-logged {
+  h1 {
+    font-size: 135px;
+  }
+  #user .not-logged-in, #header-links { 
+    margin-top: 120px;
+  }
 }
 
 #header-links { 
   float: left;
   margin-left: 20px;
 }
-#user a, #header-links a { 
+#user .not-logged-in {
+  display: block;
+}
+#user .not-logged-in a, #header-links a { 
   @extend .header-button;
 }
 #header-links a {
@@ -58,18 +92,23 @@ body {
   opacity: .7;
 }
 
-#theme-header h1 {
-  color: #E5F600;
-  font-size: 135px;
-  line-height: 0px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 5;
+.user-logged-left {
+  float: left;
 }
 
-#header-space {
-  height: 120px;
+.user-logged-right {
+  float: right;
+  text-align: left;
+  padding: 0 10px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  background: #FAF7DC;
+  height: 69px;
 }
+.user-logged-right select {
+  width: 160px;
+}
+
 
 
