@@ -1,12 +1,31 @@
 @import url(../base/style.css);
 
-.box-padding {
-  padding: 10px;
+.clean {
+  clear: both;
+}
+
+$padding: 12px;
+$half-padding: 6px;
+
+.padding {
+  padding: $padding;
   display: inline-block;
+}
+.half-padding {
+  padding: $half-padding;
+}
+.no-v-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.no-h-padding {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 body {
   background: none;
+  overflow-x: hidden;
 }
 
 #top-search {
@@ -30,9 +49,10 @@ body {
 }
 
 .header-button {
-  @extend .box-padding;
+  @extend .padding;
   background: #F6FCA6;
   margin: 0 2px;
+  margin-bottom: $padding;
   font-weight: bold;
   text-decoration: none;
   color: black;
@@ -47,10 +67,8 @@ body {
   position: relative;
 }
 #theme-header .logged {
-  height: 90px;
 }
 #theme-header .not-logged {
-  height: 160px;
 }
 
 #theme-header h1 {
@@ -65,6 +83,7 @@ body {
   h1 {
     font-size: 100px;
     margin-top: 40px;
+    margin-bottom: 40px;
   }
   #user .not-logged-in, #header-links { 
     margin-top: 50px;
@@ -82,7 +101,7 @@ body {
 
 #header-links { 
   float: left;
-  margin-left: 20px;
+  margin-left: $padding;
 }
 #user .not-logged-in {
   display: block;
@@ -118,4 +137,52 @@ body {
   margin-top: 0;
 }
 
+#active-organization {
+  background: #7857B8;
+  height: 24px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  @extend .half-padding;
+  @extend .no-h-padding;
+
+  #active-organization-inner {
+    width: 960px;
+    margin: auto;
+
+    #organization-ident {
+      float: left;
+      margin-left: $padding;
+
+      img {
+        width: 46px;
+        height: 46px;
+        margin-top: -6px;
+        position: absolute;
+      }
+
+      h2 {
+        margin-left: 58px;
+        color: white;
+        display: inline;
+      }
+    }
+
+    #organization-menu {
+      float: right;
+
+      .organization-button {
+        @extend .half-padding;
+        height: $padding;
+        display: inline-block;
+        font-size: 11px;
+        background: #FAF7DC;
+        text-decoration: none;
+      }
+    }
+  }
+}
+#wrap-2 {
+  margin-top: 36px;
+}
 
