@@ -1,5 +1,48 @@
 @import url(../base/style.css);
 
+@font-face{ 
+  font-family: 'RobotoCondensed';
+  src: url('fonts/roboto-condensed-webfont.eot');
+  src: url('fonts/roboto-condensed-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/roboto-condensed-webfont.woff') format('woff'),
+       url('fonts/roboto-condensed-webfont.ttf') format('truetype'),
+       url('fonts/roboto-condensed-webfont.svg#webfont') format('svg');
+}
+
+@font-face{ 
+  font-family: 'RobotoRegular';
+  src: url('fonts/roboto-regular.eot');
+  src: url('fonts/roboto-regular.eot?#iefix') format('embedded-opentype'),
+       url('fonts/roboto-regular.woff') format('woff'),
+       url('fonts/roboto-regular.ttf') format('truetype'),
+       url('fonts/roboto-regular.svg#webfont') format('svg');
+}
+
+@font-face{ 
+  font-family: 'RobotoBoldCondensed';
+  src: url('fonts/roboto-boldcondensed.eot');
+  src: url('fonts/roboto-boldcondensed.eot?#iefix') format('embedded-opentype'),
+       url('fonts/roboto-boldcondensed.woff') format('woff'),
+       url('fonts/roboto-boldcondensed.ttf') format('truetype'),
+       url('fonts/roboto-boldcondensed.svg#webfont') format('svg');
+}
+
+#content .no-boxes h1 {
+  font-family: 'RobotoRegular';
+  font-size: 34pt;
+  color: #28370C;
+  font-weight: normal;
+  font-variant: normal;
+  text-align: left;
+  border: 0px;
+}
+
+p.menu_g_selecionado{
+  font-family: 'RobotoBoldCondensed';
+  font-size: 21pt;
+}
+
+
 .box-padding {
   padding: 10px;
   display: inline-block;
