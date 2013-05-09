@@ -27,9 +27,23 @@
        url('fonts/roboto-boldcondensed.svg#webfont') format('svg');
 }
 
+@font-face{ 
+  font-family: 'RobotoBlack';
+  src: url('fonts/roboto-black.eot');
+  src: url('fonts/roboto-black.eot?#iefix') format('embedded-opentype'),
+       url('fonts/roboto-black.woff') format('woff'),
+       url('fonts/roboto-black.ttf') format('truetype'),
+       url('fonts/roboto-black.svg#webfont') format('svg');
+}
+
+body {
+  font-family: 'RobotoRegular';
+  font-size: 12pt;
+}
+
 #content .no-boxes h1 {
   font-family: 'RobotoRegular';
-  font-size: 34pt;
+  font-size: 24pt;
   color: #28370C;
   font-weight: normal;
   font-variant: normal;
@@ -104,6 +118,24 @@ body {
   left: 0;
   z-index: 5;
 }
+
+#content h2 {
+  font-size: 20px;
+  font-family: 'RobotoRegular';
+  text-transform: uppercase;
+  color: #394E41;
+  margin-left:25px;
+}
+
+#content h4 {
+  font-size: 16px;
+  font-family: 'RobotoRegular';
+  text-transform: uppercase;
+  color: #394E41;
+  margin-left:25px;
+}
+
+
 #theme-header .logged {
   h1 {
     font-size: 100px;
