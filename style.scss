@@ -1,5 +1,45 @@
 @import url(../base/style.css);
 
+.clean {
+  clear: both;
+}
+
+$base: 12px;
+$module: 6*$base;
+$intercolumn: 2*$base;
+
+$module1: 1*$module + 1*$intercolumn;
+$module2: 2*$module + 1*$intercolumn;
+$module3: 3*$module + 2*$intercolumn;
+$module4: 4*$module + 3*$intercolumn;
+$module5: 5*$module + 4*$intercolumn;
+$module6: 6*$module + 5*$intercolumn;
+$module7: 7*$module + 6*$intercolumn;
+$module8: 8*$module + 7*$intercolumn;
+$module9: 9*$module + 8*$intercolumn;
+$module10: 10*$module + 9*$intercolumn;
+
+$padding: $intercolumn/2;
+$half-padding: $padding/2;
+$margin: $intercolumn;
+$half-margin: $margin/2;
+
+.padding {
+  padding: $padding;
+  display: inline-block;
+}
+.half-padding {
+  padding: $half-padding;
+}
+.no-v-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.no-h-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 @font-face{ 
   font-family: 'RobotoCondensed';
   src: url('fonts/roboto-condensed-webfont.eot');
@@ -56,14 +96,79 @@ p.menu_g_selecionado{
   font-size: 21pt;
 }
 
-
-.box-padding {
-  padding: 10px;
-  display: inline-block;
+/* Fix to 960px effective content */
+#wrap-1 {
+  position: relative;
 }
+
+#wrap-1,
+#footer-content,
+#theme-footer {
+  width: 1040px;
+  border-left: 24px solid transparent;
+  border-right: 24px solid transparent;
+}
+
+#wrap-1 {
+  background: transparent url(images/content-bg.png) center top repeat-y;
+}
+
+#wrap-2 {
+  padding: 24px;
+  padding-top: 0;
+  background: transparent;
+  border-color: transparent;
+  border: none;
+  border-top: 1px solid #D3D7CF;
+}
+
+.box-2,
+.box-3 {
+  width: 220px;
+}
+body.template-default .box-1 {
+  margin: 0 244px 0 244px;
+}
+body.template-2leftbars .box-1 {
+  margin: 0 0 0 488px;
+}
+body.template-rightbar .box-1 {
+  margin: 0 244px 0 0;
+}
+body.template-leftbar .box-1 {
+  margin: 0 0 0 244px;
+}
+
+#content .link-list-block li a.link-this-page {
+  max-width: none;
+}
+
+#profile-activity ul,
+#profile-network ul,
+#profile-wall ul {
+  width: 100%;
+}
+.ui-tabs .ui-tabs-panel {
+  padding: 0;
+}
+
+#main-content-wrapper-1,
+#main-content-wrapper-2,
+#main-content-wrapper-3,
+#main-content-wrapper-4,
+#main-content-wrapper-5,
+#main-content-wrapper-6,
+#main-content-wrapper-7,
+#main-content-wrapper-8 {
+  background: transparent;
+  padding: 0;
+}
+
+/* end */
 
 body {
   background: none;
+  overflow-x: hidden;
 }
 
 #top-search {
@@ -87,9 +192,10 @@ body {
 }
 
 .header-button {
-  @extend .box-padding;
+  @extend .padding;
   background: #F6FCA6;
   margin: 0 2px;
+  margin-bottom: $padding;
   font-weight: bold;
   text-decoration: none;
   color: black;
@@ -104,10 +210,8 @@ body {
   position: relative;
 }
 #theme-header .logged {
-  height: 90px;
 }
 #theme-header .not-logged {
-  height: 160px;
 }
 
 #theme-header h1 {
@@ -140,6 +244,7 @@ body {
   h1 {
     font-size: 100px;
     margin-top: 40px;
+    margin-bottom: 40px;
   }
   #user .not-logged-in, #header-links { 
     margin-top: 50px;
@@ -157,7 +262,7 @@ body {
 
 #header-links { 
   float: left;
-  margin-left: 20px;
+  margin-left: $padding;
 }
 #user .not-logged-in {
   display: block;
@@ -193,4 +298,77 @@ body {
   margin-top: 0;
 }
 
+#active-organization {
+  background: #7857B8;
+  height: 24px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  @extend .half-padding;
+  @extend .no-h-padding;
+
+  #active-organization-inner {
+    width: 960px;
+    margin: auto;
+
+    #organization-ident {
+      float: left;
+      margin-left: $half-margin;
+
+      img {
+        width: 46px;
+        height: 46px;
+        margin-top: -6px;
+        position: absolute;
+      }
+
+      h2 {
+        margin-left: 58px;
+        color: white;
+        display: inline;
+      }
+    }
+
+    #organization-menu {
+      float: right;
+
+      .organization-button {
+        @extend .half-padding;
+        height: $padding;
+        display: inline-block;
+        font-size: 11px;
+        background: #FAF7DC;
+        text-decoration: none;
+      }
+    }
+  }
+}
+#wrap-2 {
+  margin-top: 36px;
+}
+
+.snippet {
+  padding: $padding;
+
+  .first-column {
+    display: inline-block;
+    width: $module2;
+    margin-right: $margin;
+
+    .label {
+
+    }
+  }
+  .second-column {
+    display: inline-block;
+    width: $module6;
+    margin-right: $margin;
+  }
+  .third-column {
+    display: inline-block;
+    width: $module2;
+
+  }
+
+}
 
