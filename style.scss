@@ -40,7 +40,7 @@ $half-margin: $margin/2;
   padding-right: 0;
 }
 
-@font-face{ 
+@font-face { 
   font-family: 'RobotoCondensed';
   src: url('fonts/roboto-condensed-webfont.eot');
   src: url('fonts/roboto-condensed-webfont.eot?#iefix') format('embedded-opentype'),
@@ -48,8 +48,7 @@ $half-margin: $margin/2;
        url('fonts/roboto-condensed-webfont.ttf') format('truetype'),
        url('fonts/roboto-condensed-webfont.svg#webfont') format('svg');
 }
-
-@font-face{ 
+@font-face { 
   font-family: 'RobotoRegular';
   src: url('fonts/roboto-regular.eot');
   src: url('fonts/roboto-regular.eot?#iefix') format('embedded-opentype'),
@@ -57,8 +56,7 @@ $half-margin: $margin/2;
        url('fonts/roboto-regular.ttf') format('truetype'),
        url('fonts/roboto-regular.svg#webfont') format('svg');
 }
-
-@font-face{ 
+@font-face { 
   font-family: 'RobotoBoldCondensed';
   src: url('fonts/roboto-boldcondensed.eot');
   src: url('fonts/roboto-boldcondensed.eot?#iefix') format('embedded-opentype'),
@@ -66,10 +64,120 @@ $half-margin: $margin/2;
        url('fonts/roboto-boldcondensed.ttf') format('truetype'),
        url('fonts/roboto-boldcondensed.svg#webfont') format('svg');
 }
+@font-face { 
+  font-family: 'RobotoBlack';
+  src: url('fonts/roboto-black.eot');
+  src: url('fonts/roboto-black.eot?#iefix') format('embedded-opentype'),
+       url('fonts/roboto-black.woff') format('woff'),
+       url('fonts/roboto-black.ttf') format('truetype'),
+       url('fonts/roboto-black.svg#webfont') format('svg');
+}
 
-#content .no-boxes h1 {
+/* Paragraphs styles definition */
+
+.pstyle-none {
+  font-family: 'RobotoRegular'; /* FIXME to minionpro */
+  font-size: 12pt;
+}
+.pstyle-basic {
+  font-family: 'RobotoRegular';
+  font-size: 16pt;
+}
+.pstyle-button {
+  font-family: 'RobotoBlack';
+  font-size: 16pt;
+}
+.pstyle-button-small {
+  font-family: 'RobotoBoldCondensed';
+  font-size: 13pt;
+}
+.pstyle-title {
+  font-family: 'RobotoRegular'; /* FIXME to ubuntu */
+  font-size: 72pt;
+}
+.pstyle-h1 {
   font-family: 'RobotoRegular';
   font-size: 34pt;
+}
+.pstyle-h2 {
+  font-family: 'RobotoCondensed';
+  font-size: 26pt;
+}
+.pstyle-h3 {
+  font-family: 'RobotoBlack';
+  font-size: 21pt;
+}
+.pstyle-h4 {
+  font-family: 'RobotoBold';
+  font-size: 16pt;
+}
+.pstyle-h5 {
+  font-family: 'RobotoBlack';
+  font-size: 13pt;
+}
+.pstyle-title-section {
+  font-family: 'RobotoCondensed';
+  font-size: 92pt;
+}
+.pstyle-field {
+  font-family: 'RobotoRegular'; /* FIXME CourierNew */
+  font-size: 13pt;
+}
+.pstyle-menu-big-selected {
+  font-family: 'RobotoBoldCondensed';
+  font-size: 21pt;
+}
+.pstyle-menu-big-unselected {
+  font-family: 'RobotoCondensed';
+  font-size: 21pt;
+}
+.pstyle-menu-medium-selected {
+  font-family: 'RobotoBoldCondensed';
+  font-size: 16pt;
+}
+.pstyle-menu-medium-unselected {
+  font-family: 'RobotoCondensed';
+  font-size: 16pt;
+}
+.pstyle-menu-small-selected {
+  font-family: 'RobotoBoldCondensed';
+  font-size: 13pt;
+}
+.pstyle-menu-small-unselected {
+  font-family: 'RobotoCondensed';
+  font-size: 13pt;
+}
+.pstyle-tp4 {
+  font-family: 'RobotoRegular';
+  font-size: 42pt;
+}
+.pstyle-tp3 {
+  font-family: 'RobotoRegular';
+  font-size: 34pt;
+}
+.pstyle-tp2 {
+  font-family: 'RobotoRegular';
+  font-size: 26pt;
+}
+.pstyle-tp1 {
+  font-family: 'RobotoRegular';
+  font-size: 21pt;
+}
+.pstyle-tm1 {
+  font-family: 'RobotoRegular';
+  font-size: 13pt;
+}
+.pstyle-tm2 {
+  font-family: 'RobotoRegular';
+  font-size: 10pt;
+}
+
+body {
+  @extend .pstyle-none;
+}
+
+#content .no-boxes h1 {
+  @extend .pstyle-h1;
   color: #28370C;
   font-weight: normal;
   font-variant: normal;
@@ -77,9 +185,8 @@ $half-margin: $margin/2;
   border: 0px;
 }
 
-p.menu_g_selecionado{
-  font-family: 'RobotoBoldCondensed';
-  font-size: 21pt;
+p.menu_g_selecionado {
+  @extend .pstyle-menu-big-selected;
 }
 
 /* Fix to 960px effective content */
@@ -194,10 +301,11 @@ body {
 #theme-header {
   height: auto;
   position: relative;
-}
-#theme-header .logged {
-}
-#theme-header .not-logged {
+
+  .logged {
+  }
+  .not-logged {
+  }
 }
 
 #theme-header h1 {
@@ -208,6 +316,27 @@ body {
   left: 0;
   z-index: 5;
 }
+
+#content h2 {
+  @extend .pstyle-h2;
+  text-transform: uppercase;
+  color: #394E41;
+  margin-left:25px;
+}
+#content h3 {
+  @extend .pstyle-h3;
+}
+#content h4 {
+  @extend .pstyle-h4;
+  text-transform: uppercase;
+  color: #394E41;
+  margin-left:25px;
+}
+#content h5 {
+  @extend .pstyle-h5;
+}
+
+
 #theme-header .logged {
   h1 {
     font-size: 100px;
