@@ -355,6 +355,7 @@ body {
   height: 310px;
   width: 100%;
   margin: 0;
+  /* FIXME missing top shadow */
 
   #footer-inner {
     width: 960px;
@@ -480,8 +481,46 @@ body {
   margin-top: 36px;
 }
 
-.snippet {
+/* escambo button */
+
+.do-escambo-button {
+  @extend .pstyle-button-small;
+  background: $c-exchange;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: $half-padding $padding;
+}
+
+/* end */
+
+.cms-learning-plugin-interest-snippet {
+  background: $c-knowledge-bg;
+  border: 1px dotted $c-knowledge-label;
+  .label {
+    background: $c-knowledge-label;
+  }
+}
+.product-snippet {
+  background: $c-offer-bg;
+  border: 1px solid $c-offer-label;
+  .label {
+    background: $c-offer-label;
+  }
+}
+.sniffer-plugin-interest-snippet {
+  background: $c-interest-bg;
+  border: 1px dashed $c-interest-label;
+  .label {
+    background: $c-interest-label;
+  }
+}
+
+.escambo-snippet {
   padding: $padding;
+  margin-bottom: $half-margin;
+  height: 7*$base;
 
   .first-column {
     display: inline-block;
@@ -489,7 +528,11 @@ body {
     margin-right: $margin;
 
     .label {
-
+      text-transform: uppercase;
+      padding: $padding;
+      color: white;
+      margin: -$padding;
+      display: inline-block;
     }
   }
   .second-column {
@@ -501,6 +544,10 @@ body {
     display: inline-block;
     width: $module2;
 
+    .exchange {
+      @extend .do-escambo-button;
+
+    }
   }
 
 }
