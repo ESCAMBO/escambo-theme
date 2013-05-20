@@ -4,6 +4,21 @@
   clear: both;
 }
 
+/* Colors */
+
+$c-interest-bg: #F3F5ED;
+$c-interest-label: #79A458;
+$c-knowledge-bg: #FCF0EE;
+$c-knowledge-label: #C37169;
+$c-offer-bg: #F1F1F7;
+$c-offer-label: #677FB7;
+
+$c-exchange: #394E41;
+
+$c-footer-bg: #FFF386;
+
+/* Widths for paddings, margins and sizes definition */
+
 $base: 12px;
 $module: 6*$base;
 $intercolumn: 2*$base;
@@ -39,6 +54,8 @@ $half-margin: $margin/2;
   padding-left: 0;
   padding-right: 0;
 }
+
+/* end */
 
 @font-face { 
   font-family: 'RobotoCondensed';
@@ -303,24 +320,63 @@ body {
   position: relative;
 
   .logged {
+    h1 {
+      font-size: 100px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    #user .not-logged-in, #header-links { 
+      margin-top: 50px;
+    }
   }
+
   .not-logged {
+    h1 {
+      font-size: 135px;
+    }
+    #user .not-logged-in, #header-links { 
+      margin-top: 120px;
+    }
   }
+
+  h1 {
+    color: #E5F600;
+    line-height: 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+  }
+
 }
 
-#theme-header h1 {
-  color: #E5F600;
-  line-height: 0px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 5;
+#theme-footer {
+  background: $c-footer-bg;
+  height: 310px;
+  width: 100%;
+  margin: 0;
+
+  #footer-inner {
+    width: 960px;
+    margin: auto;
+  }
+
+  #footer-devel {
+    @extend .pstyle-h4; /* FIXME */
+    padding: 40px 0;
+  }
+  #footer-support {
+    @extend .pstyle-h4; /* FIXME */
+  }
+  #footer-devel b, #footer-support {
+    color: $c-exchange;
+  }
 }
 
 #content h2 {
   @extend .pstyle-h2;
   text-transform: uppercase;
-  color: #394E41;
+  color: $c-exchange;
   margin-left:25px;
 }
 #content h3 {
@@ -329,33 +385,13 @@ body {
 #content h4 {
   @extend .pstyle-h4;
   text-transform: uppercase;
-  color: #394E41;
+  color: $c-exchange;
   margin-left:25px;
 }
 #content h5 {
   @extend .pstyle-h5;
 }
 
-
-#theme-header .logged {
-  h1 {
-    font-size: 100px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-  #user .not-logged-in, #header-links { 
-    margin-top: 50px;
-  }
-}
-
-#theme-header .not-logged {
-  h1 {
-    font-size: 135px;
-  }
-  #user .not-logged-in, #header-links { 
-    margin-top: 120px;
-  }
-}
 
 #header-links { 
   float: left;
