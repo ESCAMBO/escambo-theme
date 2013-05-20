@@ -1,0 +1,144 @@
+@import url(../base/style.css);
+@font-face {
+  font-family: 'RobotoCondensed';
+  src: url("fonts/roboto-condensed-webfont.eot");
+  src: url("fonts/roboto-condensed-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/roboto-condensed-webfont.woff") format("woff"), url("fonts/roboto-condensed-webfont.ttf") format("truetype"), url("fonts/roboto-condensed-webfont.svg#webfont") format("svg"); }
+
+@font-face {
+  font-family: 'RobotoRegular';
+  src: url("fonts/roboto-regular.eot");
+  src: url("fonts/roboto-regular.eot?#iefix") format("embedded-opentype"), url("fonts/roboto-regular.woff") format("woff"), url("fonts/roboto-regular.ttf") format("truetype"), url("fonts/roboto-regular.svg#webfont") format("svg"); }
+
+@font-face {
+  font-family: 'RobotoBoldCondensed';
+  src: url("fonts/roboto-boldcondensed.eot");
+  src: url("fonts/roboto-boldcondensed.eot?#iefix") format("embedded-opentype"), url("fonts/roboto-boldcondensed.woff") format("woff"), url("fonts/roboto-boldcondensed.ttf") format("truetype"), url("fonts/roboto-boldcondensed.svg#webfont") format("svg"); }
+
+@font-face {
+  font-family: 'RobotoBlack';
+  src: url("fonts/roboto-black.eot");
+  src: url("fonts/roboto-black.eot?#iefix") format("embedded-opentype"), url("fonts/roboto-black.woff") format("woff"), url("fonts/roboto-black.ttf") format("truetype"), url("fonts/roboto-black.svg#webfont") format("svg"); }
+
+body {
+  font-family: 'RobotoRegular';
+  font-size: 12pt; }
+
+#content .no-boxes h1 {
+  font-family: 'RobotoRegular';
+  font-size: 24pt;
+  color: #28370C;
+  font-weight: normal;
+  font-variant: normal;
+  text-align: left;
+  border: 0px; }
+
+p.menu_g_selecionado {
+  font-family: 'RobotoBoldCondensed';
+  font-size: 21pt; }
+
+.box-padding, .header-button, #user .not-logged-in a, #header-links a {
+  padding: 10px;
+  display: inline-block; }
+
+body {
+  background: none; }
+
+#top-search {
+  display: none; }
+
+#navigation {
+  display: none; }
+
+#wrap-2 {
+  border: none; }
+
+#user {
+  text-align: auto;
+  position: inherit;
+  right: 0;
+  display: inline;
+  float: right; }
+
+.header-button, #user .not-logged-in a, #header-links a {
+  background: #F6FCA6;
+  margin: 0 2px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black; }
+  .header-button:hover, #user .not-logged-in a:hover, #header-links a:hover {
+    background: #7F005C;
+    color: white; }
+
+#theme-header {
+  height: auto;
+  position: relative; }
+
+#theme-header .logged {
+  height: 90px; }
+
+#theme-header .not-logged {
+  height: 160px; }
+
+#theme-header h1 {
+  color: #E5F600;
+  line-height: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5; }
+
+#content h2 {
+  font-size: 20px;
+  font-family: 'RobotoRegular';
+  text-transform: uppercase;
+  color: #394E41;
+  margin-left: 25px; }
+
+#content h4 {
+  font-size: 16px;
+  font-family: 'RobotoRegular';
+  text-transform: uppercase;
+  color: #394E41;
+  margin-left: 25px; }
+
+#theme-header .logged h1 {
+  font-size: 100px;
+  margin-top: 40px; }
+#theme-header .logged #user .not-logged-in, #theme-header .logged #header-links {
+  margin-top: 50px; }
+
+#theme-header .not-logged h1 {
+  font-size: 135px; }
+#theme-header .not-logged #user .not-logged-in, #theme-header .not-logged #header-links {
+  margin-top: 120px; }
+
+#header-links {
+  float: left;
+  margin-left: 20px; }
+
+#user .not-logged-in {
+  display: block; }
+
+#header-links a {
+  z-index: 10;
+  position: relative;
+  opacity: .7; }
+
+.user-logged-left {
+  float: left; }
+
+.user-logged-right {
+  float: right;
+  text-align: left;
+  padding: 0 10px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  background: #FAF7DC;
+  height: 69px; }
+
+.user-logged-right select {
+  width: 160px; }
+
+#content {
+  margin-top: 0; }
