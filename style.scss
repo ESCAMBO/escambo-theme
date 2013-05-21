@@ -520,10 +520,12 @@ body {
 .escambo-snippet {
   padding: $padding;
   margin-bottom: $half-margin;
-  height: 7*$base;
+  min-height: 7*$base;
 
+  .first-column, .second-column, .third-column {
+    float: left;
+  }
   .first-column {
-    display: inline-block;
     width: $module2;
     margin-right: $margin;
 
@@ -536,12 +538,15 @@ body {
     }
   }
   .second-column {
-    display: inline-block;
     width: $module6;
     margin-right: $margin;
+
+    .description, .local {
+      margin-top: $margin;
+      @extend .pstyle-tm2;
+    }
   }
   .third-column {
-    display: inline-block;
     width: $module2;
 
     .exchange {
