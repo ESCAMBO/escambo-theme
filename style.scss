@@ -491,6 +491,8 @@ body {
   text-decoration: none;
   display: inline-block;
   padding: $half-padding $padding;
+  border: 0px;
+  border-radius: 5px;
 }
 
 /* end */
@@ -551,13 +553,10 @@ body {
   }
 }
 
-li {
-  display: inline-block;
-}
-
-.escambo-plugin-profile-block{
-  width: $module2;
-  border: double 5px;
+#search-results{
+  li.search-profile-item {
+    display: inline-block;
+  }
 
   /*place here all background and border combinations */
   /*begin*/
@@ -569,72 +568,71 @@ li {
     background-color:#F3E1EF;
   }
   /*end*/
+}
 
-  .content-profile-area{
-    max-width: $module2;    
-  
+.escambo-plugin-profile-block{
+  width: $module2;
+  border: double 5px;
+
     .categories-area{
       @extend .area;
+      @extend .pstyle-tm1;
       height: $base*6;
-      max-height: $base*6;
-      font-size: 15px;
     }
 
-    .enterprise-area{
-      @extend .area;
+    a.profile_homepage_link{
+      @extend .area;      
       height: $base*9;
-      max-height: $base*9;
+      display: block;
     }
 
     .location-area{
       @extend .area;
+      @extend .pstyle-tm1;
       height: $base*6;
-      max-height: $base*6;
-      font-size: 15px;
+      display: block;
     }
 
-    .sumary-area{
+    .summary-area{
       @extend .area;
-      height: $base*4;
-      max-height: $base*4;      
-      font-size: 10px;
+      @extend .pstyle-tm2;
+      height: $base*4;      
     }
 
     .area{
       width: $module2 - ($base*2);
-      max-width: $module2 - ($base*2);
-      position: relative;
-      left: $base;
+      margin-top: $base*2;
+      margin-left: $base;
     }
 
     .dotted-border-bottom {
       border-bottom: 1px dotted #000000;
     }
-  }
+  
 
   .image-profile-area{
-    max-width: $module2;
-    max-height: $base*15;
+    width: $module2;
+    height: $base*15;
 
     .escambo-plugin-exchange-icons{
       width: $base*4;
       height: $base*2;
-      position: relative;
-      left: $module2 -($base*4);
+      margin-left: $module2 -($base*4);
 
       .icon{
-        width:$base*1.5;
-        max-width: $base*1.5;
-        height:$base*1.5;
-        max-height: $base*1.5;
+        width:$base*2.5;        
+        height:$base*2.5;
       }
 
       .has-exchanged{
         @extend .icon;
-        background: url(images/shareable.png);
+        background: url(images/troca_simbolo.png);
       }
 
-      .hasnot-exchanged{}
+      .has-not-exchanged{
+        @extend .icon;
+        background: url(images/troca_simbolo_vazio.png);
+      }
 
       .is-bookmarked{}
 
@@ -645,23 +643,15 @@ li {
 
     .profile-image{      
       width: $module2;
-      height: $base*14;
-      position: relative;
-      top: -($base*2)
+      height: $base*14;      
+      margin-top: -($base*2);
     }   
   }
-}
 
-.escambo-plugin-exchange-button{
-  float: left;
-  color: white;
-  background: #394E41;
-  border: 0px;
-  border-radius: 5px;
-  font-family: 'RobotoBoldCondensed';
-  padding: 3px;
-  position: relative;    
-  left: $base/2;
-  top: -($base);
+  .exchange-button{
+    @extend .do-escambo-button;    
+    margin-top: -28px;
+    margin-left: $base;
+  }
 }
 
