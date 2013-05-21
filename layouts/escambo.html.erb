@@ -19,8 +19,6 @@
     %>
   </head>
   <body class="<%= body_classes %>">
-    <a href="#content" id="link-go-content"><span><%= _("Go to the content") %></span></a>
-
     <%=
       @plugins.dispatch(:body_beginning).collect do |content|
         content.respond_to?(:call) ? content.call : content
