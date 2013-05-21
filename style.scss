@@ -520,6 +520,7 @@ body.template-leftbar .box-1 {
   padding: $padding;
   margin-bottom: $half-margin;
   min-height: 7*$base;
+  position: relative;
 
   .first-column, .second-column, .third-column {
     float: left;
@@ -545,13 +546,12 @@ body.template-leftbar .box-1 {
       @extend .pstyle-tm2;
     }
   }
-  .third-column {
-    width: $module2;
 
-    .exchange {
-      @extend .do-escambo-button;
-
-    }
+  .exchange {
+    @extend .do-escambo-button;
+    position: absolute;
+    bottom: $padding;
+    right: $padding;
   }
 }
 
