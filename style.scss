@@ -191,6 +191,8 @@ $half-margin: $margin/2;
 
 body {
   @extend .pstyle-none;
+  background: none;
+  overflow-x: hidden;
 }
 
 #content .no-boxes h1 {
@@ -243,6 +245,7 @@ p.menu_g_selecionado {
 #wrap-2 {
   padding: $margin;
   padding-top: 0;
+  margin-top: 36px;
   background: transparent;
   border-color: transparent;
   border: none;
@@ -293,10 +296,7 @@ body.template-leftbar .box-1 {
 
 /* end */
 
-body {
-  background: none;
-  overflow-x: hidden;
-}
+/* Theme structure */
 
 #top-search {
   display: none;
@@ -475,9 +475,8 @@ body {
     }
   }
 }
-#wrap-2 {
-  margin-top: 36px;
-}
+
+/* end */
 
 /* escambo button */
 
