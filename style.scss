@@ -13,6 +13,8 @@ $c-offer-label: #677FB7;
 
 $c-exchange: #394E41;
 
+$c-search-bg: #FAF7DC;
+
 $c-footer-bg: #FFF386;
 
 /* Widths for paddings, margins and sizes definition */
@@ -667,3 +669,43 @@ li {
   top: -($base);
 }
 
+#escambo-search-form {
+  background: $c-search-bg;
+  padding: $padding;
+  border-radius: 3px;
+  border: 1px solid black;
+  margin: -$half-margin;
+  margin-top: $margin;
+  margin-bottom: $margin;
+
+  form {
+
+    .search-field {
+      background: white;
+      border: 1px solid #aaa;
+      box-shadow: 1px 1px 1px 0px #aaa;
+
+      #search-input {
+        @extend .pstyle-field;
+        outline: none;
+        border: none;
+        padding: $half-padding $padding;
+        font-style: normal;
+
+        &.blur {
+
+        }
+      }
+
+      input[type=submit] {
+        background: transparent url(/designs/themes/escambo/images/lupa.png) no-repeat left 7px;
+        border: none;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        float: right;
+      }
+    }
+  }
+
+}
