@@ -4,6 +4,21 @@
   clear: both;
 }
 
+/* Colors */
+
+$c-interest-bg: #F3F5ED;
+$c-interest-label: #79A458;
+$c-knowledge-bg: #FCF0EE;
+$c-knowledge-label: #C37169;
+$c-offer-bg: #F1F1F7;
+$c-offer-label: #677FB7;
+
+$c-exchange: #394E41;
+
+$c-footer-bg: #FFF386;
+
+/* Widths for paddings, margins and sizes definition */
+
 $base: 12px;
 $module: 6*$base;
 $intercolumn: 2*$base;
@@ -40,7 +55,9 @@ $half-margin: $margin/2;
   padding-right: 0;
 }
 
-@font-face{ 
+/* end */
+
+@font-face { 
   font-family: 'RobotoCondensed';
   src: url('fonts/roboto-condensed-webfont.eot');
   src: url('fonts/roboto-condensed-webfont.eot?#iefix') format('embedded-opentype'),
@@ -48,8 +65,7 @@ $half-margin: $margin/2;
        url('fonts/roboto-condensed-webfont.ttf') format('truetype'),
        url('fonts/roboto-condensed-webfont.svg#webfont') format('svg');
 }
-
-@font-face{ 
+@font-face { 
   font-family: 'RobotoRegular';
   src: url('fonts/roboto-regular.eot');
   src: url('fonts/roboto-regular.eot?#iefix') format('embedded-opentype'),
@@ -57,8 +73,7 @@ $half-margin: $margin/2;
        url('fonts/roboto-regular.ttf') format('truetype'),
        url('fonts/roboto-regular.svg#webfont') format('svg');
 }
-
-@font-face{ 
+@font-face { 
   font-family: 'RobotoBoldCondensed';
   src: url('fonts/roboto-boldcondensed.eot');
   src: url('fonts/roboto-boldcondensed.eot?#iefix') format('embedded-opentype'),
@@ -66,8 +81,7 @@ $half-margin: $margin/2;
        url('fonts/roboto-boldcondensed.ttf') format('truetype'),
        url('fonts/roboto-boldcondensed.svg#webfont') format('svg');
 }
-
-@font-face{ 
+@font-face { 
   font-family: 'RobotoBlack';
   src: url('fonts/roboto-black.eot');
   src: url('fonts/roboto-black.eot?#iefix') format('embedded-opentype'),
@@ -76,14 +90,111 @@ $half-margin: $margin/2;
        url('fonts/roboto-black.svg#webfont') format('svg');
 }
 
-body {
-  font-family: 'RobotoRegular';
+/* Paragraphs styles definition */
+
+.pstyle-none {
+  font-family: 'RobotoRegular'; /* FIXME to minionpro */
   font-size: 12pt;
+}
+.pstyle-basic {
+  font-family: 'RobotoRegular';
+  font-size: 16pt;
+}
+.pstyle-button {
+  font-family: 'RobotoBlack';
+  font-size: 16pt;
+}
+.pstyle-button-small {
+  font-family: 'RobotoBoldCondensed';
+  font-size: 13pt;
+}
+.pstyle-title {
+  font-family: 'RobotoRegular'; /* FIXME to ubuntu */
+  font-size: 72pt;
+}
+.pstyle-h1 {
+  font-family: 'RobotoRegular';
+  font-size: 34pt;
+}
+.pstyle-h2 {
+  font-family: 'RobotoCondensed';
+  font-size: 26pt;
+}
+.pstyle-h3 {
+  font-family: 'RobotoBlack';
+  font-size: 21pt;
+}
+.pstyle-h4 {
+  font-family: 'RobotoBold';
+  font-size: 16pt;
+}
+.pstyle-h5 {
+  font-family: 'RobotoBlack';
+  font-size: 13pt;
+}
+.pstyle-title-section {
+  font-family: 'RobotoCondensed';
+  font-size: 92pt;
+}
+.pstyle-field {
+  font-family: 'RobotoRegular'; /* FIXME CourierNew */
+  font-size: 13pt;
+}
+.pstyle-menu-big-selected {
+  font-family: 'RobotoBoldCondensed';
+  font-size: 21pt;
+}
+.pstyle-menu-big-unselected {
+  font-family: 'RobotoCondensed';
+  font-size: 21pt;
+}
+.pstyle-menu-medium-selected {
+  font-family: 'RobotoBoldCondensed';
+  font-size: 16pt;
+}
+.pstyle-menu-medium-unselected {
+  font-family: 'RobotoCondensed';
+  font-size: 16pt;
+}
+.pstyle-menu-small-selected {
+  font-family: 'RobotoBoldCondensed';
+  font-size: 13pt;
+}
+.pstyle-menu-small-unselected {
+  font-family: 'RobotoCondensed';
+  font-size: 13pt;
+}
+.pstyle-tp4 {
+  font-family: 'RobotoRegular';
+  font-size: 42pt;
+}
+.pstyle-tp3 {
+  font-family: 'RobotoRegular';
+  font-size: 34pt;
+}
+.pstyle-tp2 {
+  font-family: 'RobotoRegular';
+  font-size: 26pt;
+}
+.pstyle-tp1 {
+  font-family: 'RobotoRegular';
+  font-size: 21pt;
+}
+.pstyle-tm1 {
+  font-family: 'RobotoRegular';
+  font-size: 13pt;
+}
+.pstyle-tm2 {
+  font-family: 'RobotoRegular';
+  font-size: 10pt;
+}
+
+body {
+  @extend .pstyle-none;
 }
 
 #content .no-boxes h1 {
-  font-family: 'RobotoRegular';
-  font-size: 24pt;
+  @extend .pstyle-h1;
   color: #28370C;
   font-weight: normal;
   font-variant: normal;
@@ -91,9 +202,8 @@ body {
   border: 0px;
 }
 
-p.menu_g_selecionado{
-  font-family: 'RobotoBoldCondensed';
-  font-size: 21pt;
+p.menu_g_selecionado {
+  @extend .pstyle-menu-big-selected;
 }
 
 /* Fix to 960px effective content */
@@ -208,57 +318,81 @@ body {
 #theme-header {
   height: auto;
   position: relative;
-}
-#theme-header .logged {
-}
-#theme-header .not-logged {
+
+  .logged {
+    h1 {
+      font-size: 100px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    #user .not-logged-in, #header-links { 
+      margin-top: 50px;
+    }
+  }
+
+  .not-logged {
+    h1 {
+      font-size: 135px;
+    }
+    #user .not-logged-in, #header-links { 
+      margin-top: 120px;
+    }
+  }
+
+  h1 {
+    color: #E5F600;
+    line-height: 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+  }
+
 }
 
-#theme-header h1 {
-  color: #E5F600;
-  line-height: 0px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 5;
+#theme-footer {
+  background: $c-footer-bg;
+  height: 310px;
+  width: 100%;
+  margin: 0;
+  /* FIXME missing top shadow */
+
+  #footer-inner {
+    width: 960px;
+    margin: auto;
+  }
+
+  #footer-devel {
+    @extend .pstyle-h4; /* FIXME */
+    padding: 40px 0;
+  }
+  #footer-support {
+    @extend .pstyle-h4; /* FIXME */
+  }
+  #footer-devel b, #footer-support {
+    color: $c-exchange;
+  }
 }
 
 #content h2 {
-  font-size: 20px;
-  font-family: 'RobotoRegular';
+  @extend .pstyle-h2;
   text-transform: uppercase;
-  color: #394E41;
+  color: $c-exchange;
   margin-left:25px;
 }
-
+#content h3 {
+  @extend .pstyle-h3;
+}
 #content h4 {
-  font-size: 16px;
-  font-family: 'RobotoRegular';
+  @extend .pstyle-h4;
   text-transform: uppercase;
-  color: #394E41;
+  color: $c-exchange;
   margin-left:25px;
 }
-
-
-#theme-header .logged {
-  h1 {
-    font-size: 100px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-  #user .not-logged-in, #header-links { 
-    margin-top: 50px;
-  }
+#content h5 {
+  @extend .pstyle-h5;
 }
 
-#theme-header .not-logged {
-  h1 {
-    font-size: 135px;
-  }
-  #user .not-logged-in, #header-links { 
-    margin-top: 120px;
-  }
-}
 
 #header-links { 
   float: left;
@@ -347,8 +481,46 @@ body {
   margin-top: 36px;
 }
 
-.snippet {
+/* escambo button */
+
+.do-escambo-button {
+  @extend .pstyle-button-small;
+  background: $c-exchange;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: $half-padding $padding;
+}
+
+/* end */
+
+.cms-learning-plugin-interest-snippet {
+  background: $c-knowledge-bg;
+  border: 1px dotted $c-knowledge-label;
+  .label {
+    background: $c-knowledge-label;
+  }
+}
+.product-snippet {
+  background: $c-offer-bg;
+  border: 1px solid $c-offer-label;
+  .label {
+    background: $c-offer-label;
+  }
+}
+.sniffer-plugin-interest-snippet {
+  background: $c-interest-bg;
+  border: 1px dashed $c-interest-label;
+  .label {
+    background: $c-interest-label;
+  }
+}
+
+.escambo-snippet {
   padding: $padding;
+  margin-bottom: $half-margin;
+  height: 7*$base;
 
   .first-column {
     display: inline-block;
@@ -356,7 +528,11 @@ body {
     margin-right: $margin;
 
     .label {
-
+      text-transform: uppercase;
+      padding: $padding;
+      color: white;
+      margin: -$padding;
+      display: inline-block;
     }
   }
   .second-column {
@@ -368,6 +544,10 @@ body {
     display: inline-block;
     width: $module2;
 
+    .exchange {
+      @extend .do-escambo-button;
+
+    }
   }
 }
 
