@@ -226,6 +226,7 @@ body {
 
 p.menu_g_selecionado {
   @extend .pstyle-menu-big-selected;
+  line-height: 0px;
 }
 
 /* end */
