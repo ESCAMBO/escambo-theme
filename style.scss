@@ -20,6 +20,7 @@ $c-footer-bg: #FFF386;
 /* Widths for paddings, margins and sizes definition */
 
 $base: 12px;
+$half-base: $base/2;
 $module: 6*$base;
 $intercolumn: 2*$base;
 
@@ -189,7 +190,7 @@ $half-margin: $margin/2;
   font-size: 10pt;
 }
 
-/* Overwrite and general styles */
+/* Overwrites and general styles */
 
 body {
   @extend .pstyle-none;
@@ -226,6 +227,17 @@ body {
 
 p.menu_g_selecionado {
   @extend .pstyle-menu-big-selected;
+}
+
+.controller-content_viewer .no-boxes, .controller-profile .no-boxes {
+  margin: 0;
+}
+.controller-search #search-column-left {
+  display: none;
+}
+.controller-search #search-column-right {
+  float: none;
+  width: auto;
 }
 
 /* end */
@@ -323,7 +335,7 @@ body.template-leftbar .box-1 {
 .header-button {
   @extend .padding;
   background: #F6FCA6;
-  margin: 0 2px;
+  margin-right: $half-base;
   margin-bottom: $padding;
   font-weight: bold;
   text-decoration: none;
@@ -574,9 +586,11 @@ body.template-leftbar .box-1 {
   /*end*/
 }
 
-.escambo-plugin-profile-block{
+.escambo-plugin-profile-block {
   width: $module2;
-  border: double 5px;
+  border: 3px double #7F0085;
+  margin-bottom: $margin;
+  margin-right: $half-margin;
 
     .categories-area{
       @extend .area;
