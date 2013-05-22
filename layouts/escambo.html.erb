@@ -25,12 +25,12 @@
       end.join("\n")
     %>
 
-    <div id="wrap-1">
-      <div id='theme-header'>
-        <%= theme_header %>
-      </div>
+    <div id='theme-header'>
+      <%= theme_header %>
+    </div>
+    <%= render :file => 'active_organization' %>
 
-      <%= render :file => 'active_organization' %>
+    <div id="wrap-1">
 
       <div id="wrap-2">
         <h1 id="site-title">

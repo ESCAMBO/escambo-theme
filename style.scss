@@ -251,6 +251,13 @@ p.menu_g_selecionado {
   border-right: $margin solid transparent;
 }
 
+#theme-header,
+#footer-inner,
+#active-organization-inner {
+  width: 960px;
+  margin: auto;
+}
+
 #wrap-1 {
   position: relative;
   margin: auto;
@@ -378,7 +385,50 @@ body.template-leftbar .box-1 {
     left: 0;
     z-index: 5;
   }
+}
 
+#active-organization {
+  background: #7857B8;
+  height: $margin;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  @extend .half-padding;
+  @extend .no-h-padding;
+
+  #active-organization-inner {
+
+    #organization-ident {
+      float: left;
+      margin-left: $half-margin;
+
+      img {
+        width: 46px;
+        height: 46px;
+        margin-top: -6px;
+        position: absolute;
+      }
+
+      h2 {
+        margin-left: 58px;
+        color: white;
+        display: inline;
+      }
+    }
+
+    #organization-menu {
+      float: right;
+
+      .organization-button {
+        @extend .half-padding;
+        height: $padding;
+        display: inline-block;
+        font-size: 11px;
+        background: #FAF7DC;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 #theme-footer {
@@ -387,11 +437,6 @@ body.template-leftbar .box-1 {
   width: 100%;
   margin: 0;
   /* FIXME missing top shadow */
-
-  #footer-inner {
-    width: 960px;
-    margin: auto;
-  }
 
   #footer-devel {
     @extend .pstyle-h4; /* FIXME */
@@ -442,52 +487,6 @@ body.template-leftbar .box-1 {
 
 #content {
   margin-top: 0;
-}
-
-#active-organization {
-  background: #7857B8;
-  height: $margin;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  @extend .half-padding;
-  @extend .no-h-padding;
-
-  #active-organization-inner {
-    width: 960px;
-    margin: auto;
-
-    #organization-ident {
-      float: left;
-      margin-left: $half-margin;
-
-      img {
-        width: 46px;
-        height: 46px;
-        margin-top: -6px;
-        position: absolute;
-      }
-
-      h2 {
-        margin-left: 58px;
-        color: white;
-        display: inline;
-      }
-    }
-
-    #organization-menu {
-      float: right;
-
-      .organization-button {
-        @extend .half-padding;
-        height: $padding;
-        display: inline-block;
-        font-size: 11px;
-        background: #FAF7DC;
-        text-decoration: none;
-      }
-    }
-  }
 }
 
 /* end */
