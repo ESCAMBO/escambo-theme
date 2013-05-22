@@ -28,7 +28,7 @@
     <div id='theme-header'>
       <%= theme_header %>
     </div>
-    <%= render :file => 'active_organization' %>
+    <%= render :file => 'profile_line', :locals => {:profile => @active_organization, :active_organization => true} %>
 
     <div id="wrap-1">
 
@@ -44,6 +44,10 @@
         </div><!-- end id="navigation" -->
         <div id="content">
           <div id="content-inner">
+            <% if profile %>
+              <%= render :file => 'profile_line', :locals => {:profile => profile, :active_organization => false} %>
+            <% end %>
+
             <%= insert_boxes(yield) %>
             <br style='clear: both'/>
           </div><!-- end id="content-inner" -->

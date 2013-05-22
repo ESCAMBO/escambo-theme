@@ -198,7 +198,7 @@ body {
   overflow-x: hidden;
 }
 
-#content .no-boxes h1 {
+h1, #content .no-boxes h1 {
   @extend .pstyle-h1;
   color: #28370C;
   font-weight: normal;
@@ -206,28 +206,28 @@ body {
   text-align: left;
   border: 0px;
 }
-#content h2 {
+h2, #content h2 {
   @extend .pstyle-h2;
   text-transform: uppercase;
   color: $c-exchange;
   margin-left:25px;
 }
-#content h3 {
+h3, #content h3 {
   @extend .pstyle-h3;
 }
-#content h4 {
+h4, #content h4 {
   @extend .pstyle-h4;
   text-transform: uppercase;
   color: $c-exchange;
   margin-left:25px;
 }
-#content h5 {
+h5, #content h5 {
   @extend .pstyle-h5;
 }
 
 p.menu_g_selecionado {
   @extend .pstyle-menu-big-selected;
-  line-height: 0px;
+  line-height: 0;
 }
 
 .controller-content_viewer .no-boxes, .controller-profile .no-boxes {
@@ -247,14 +247,12 @@ p.menu_g_selecionado {
 #wrap-1,
 #footer-content,
 #theme-footer {
-  width: 1040px;
-  border-left: $margin solid transparent;
-  border-right: $margin solid transparent;
+  width: 960px + 2*$margin;
 }
 
 #theme-header,
 #footer-inner,
-#active-organization-inner {
+.active_organization .profile-line-inner {
   width: 960px;
   margin: auto;
 }
@@ -266,8 +264,7 @@ p.menu_g_selecionado {
 
 #wrap-2 {
   padding: $margin;
-  padding-top: 0;
-  margin-top: 36px;
+  padding-top: 1px;
   background: transparent;
   border-color: transparent;
   border: none;
@@ -388,33 +385,56 @@ body.template-leftbar .box-1 {
   }
 }
 
-#active-organization {
+.profile-line {
+  $height: $margin;
+
   background: #7857B8;
-  height: $margin;
-  width: 100%;
-  position: absolute;
-  left: 0;
+  height: $height;
   @extend .half-padding;
   @extend .no-h-padding;
 
-  #active-organization-inner {
+  &.active_organization {
+    $image-size: 4*$base;
 
-    #organization-ident {
+    margin-bottom: $margin;
+
+    img {
       float: left;
       margin-left: $half-margin;
+      margin-right: $half-margin;
+      margin-top: -($image-size/2 - $height/2);
+      width: $image-size;
+      height: $image-size;
+    }
+    .profile-name {
+      float: left;
+    }
+  }
 
-      img {
-        width: 46px;
-        height: 46px;
-        margin-top: -6px;
-        position: absolute;
-      }
+  &.profile-header {
+    $image-size: 10*$base;
 
-      h2 {
-        margin-left: 58px;
-        color: white;
-        display: inline;
-      }
+    margin-top: $image-size/2 - $height/2 - $half-padding;
+
+    img {
+      float: right;
+      margin-left: $half-margin;
+      margin-right: $half-margin;
+      margin-top: -($image-size/2 - $height/2);
+      width: $image-size;
+      height: $image-size;
+    }
+    .profile-name {
+      float: right;
+    }
+  }
+
+  .profile-line-inner {
+
+    img {
+    }
+    .profile-name {
+      color: white;
     }
 
     #organization-menu {
