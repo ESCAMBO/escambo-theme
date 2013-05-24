@@ -35,10 +35,14 @@ $module8: 8*$module + 7*$intercolumn;
 $module9: 9*$module + 8*$intercolumn;
 $module10: 10*$module + 9*$intercolumn;
 
-$padding: $intercolumn/2;
-$half-padding: $padding/2;
 $margin: $intercolumn;
 $half-margin: $margin/2;
+
+/* REMEMBER to disccount from padding the borders size, as borders uses padding's space. */
+$padding: $intercolumn/2;
+$half-padding: $padding/2;
+
+$border: 1px;
 
 .padding {
   padding: $padding;
@@ -210,7 +214,6 @@ h2, #content h2 {
   @extend .pstyle-h2;
   text-transform: uppercase;
   color: $c-exchange;
-  margin-left:25px;
 }
 h3, #content h3 {
   @extend .pstyle-h3;
@@ -523,35 +526,36 @@ body.template-leftbar .box-1 {
   display: inline-block;
   padding: $half-padding $padding;
   border: 0px;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 /* end */
 
 .cms-learning-plugin-interest-snippet {
   background: $c-knowledge-bg;
-  border: 1px dotted $c-knowledge-label;
+  border: $border dotted $c-knowledge-label;
   .label {
     background: $c-knowledge-label;
   }
 }
 .product-snippet {
   background: $c-offer-bg;
-  border: 1px solid $c-offer-label;
+  border: $border solid $c-offer-label;
+  border-radius: 5px;
   .label {
     background: $c-offer-label;
   }
 }
 .sniffer-plugin-interest-snippet {
   background: $c-interest-bg;
-  border: 1px dashed $c-interest-label;
+  border: $border dashed $c-interest-label;
   .label {
     background: $c-interest-label;
   }
 }
 
 .escambo-snippet {
-  padding: $padding;
+  padding: $padding - $border;
   margin-bottom: $half-margin;
   min-height: 7*$base;
   position: relative;
@@ -566,8 +570,8 @@ body.template-leftbar .box-1 {
     .label {
       text-transform: uppercase;
       padding: $padding;
+      margin: -($padding - $border);
       color: white;
-      margin: -$padding;
       display: inline-block;
     }
   }
@@ -579,6 +583,10 @@ body.template-leftbar .box-1 {
       margin-top: $margin;
       @extend .pstyle-tm2;
     }
+  }
+  .third-column {
+    width: $module2;
+    margin-bottom: $margin;
   }
 
   .exchange {
@@ -731,5 +739,30 @@ body.template-leftbar .box-1 {
       }
     }
   }
-
 }
+
+#escambo-enterprise-items {
+  width: $module7 + $padding;
+  margin-right: $margin;
+
+  h2 {
+    display: inline;
+  }
+
+  #offers {
+  }
+
+  .escambo-snippet {
+    .second-column {
+      width: $module3;
+    }
+    .third-column {
+      width: $module2 - $padding;
+    }
+  }
+}
+#escambo-enterprise-info {
+  width: $module3;
+}
+
+
