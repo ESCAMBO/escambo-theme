@@ -25,12 +25,12 @@
       end.join("\n")
     %>
 
-    <div id="wrap-1">
-      <div id='theme-header'>
-        <%= theme_header %>
-      </div>
+    <div id='theme-header'>
+      <%= theme_header %>
+    </div>
+    <%= render :file => 'profile_line', :locals => {:profile => @active_organization, :active_organization => true} %>
 
-      <%= render :file => 'active_organization' %>
+    <div id="wrap-1">
 
       <div id="wrap-2">
         <h1 id="site-title">
@@ -44,6 +44,10 @@
         </div><!-- end id="navigation" -->
         <div id="content">
           <div id="content-inner">
+            <% if profile %>
+              <%= render :file => 'profile_line', :locals => {:profile => profile, :active_organization => false} %>
+            <% end %>
+
             <%= insert_boxes(yield) %>
             <br style='clear: both'/>
           </div><!-- end id="content-inner" -->

@@ -24,7 +24,7 @@
           </div>
           <div>
             <%= select "enterprise", "selected", user.memberships.collect{ |p| [ p.name, p.id ] },
-              {:include_blank => _('None'), :selected => session[:active_organization]},
+              {:selected => session[:active_organization]},
               :onclick => "jQuery.post('#{url_for :controller => :account, :action => :select_active_organization}', {profile_id: this.value});" %>
           </div>
           <div>

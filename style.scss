@@ -35,10 +35,14 @@ $module8: 8*$module + 7*$intercolumn;
 $module9: 9*$module + 8*$intercolumn;
 $module10: 10*$module + 9*$intercolumn;
 
-$padding: $intercolumn/2;
-$half-padding: $padding/2;
 $margin: $intercolumn;
 $half-margin: $margin/2;
+
+/* REMEMBER to disccount from padding the borders size, as borders uses padding's space. */
+$padding: $intercolumn/2;
+$half-padding: $padding/2;
+
+$border: 1px;
 
 .padding {
   padding: $padding;
@@ -207,7 +211,7 @@ body {
   overflow-x: hidden;
 }
 
-#content .no-boxes h1 {
+h1, #content .no-boxes h1 {
   @extend .pstyle-h1;
   color: #28370C;
   font-weight: normal;
@@ -215,28 +219,27 @@ body {
   text-align: left;
   border: 0px;
 }
-#content h2 {
+h2, #content h2 {
   @extend .pstyle-h2;
   text-transform: uppercase;
   color: $c-exchange;
-  margin-left:25px;
 }
-#content h3 {
+h3, #content h3 {
   @extend .pstyle-h3;
 }
-#content h4 {
+h4, #content h4 {
   @extend .pstyle-h4;
   text-transform: uppercase;
   color: $c-exchange;
   margin-left:25px;
 }
-#content h5 {
+h5, #content h5 {
   @extend .pstyle-h5;
 }
 
 p.menu_g_selecionado {
   @extend .pstyle-menu-big-selected;
-  line-height: 0px;
+  line-height: 0;
 }
 
 .controller-content_viewer .no-boxes, .controller-profile .no-boxes {
@@ -256,9 +259,14 @@ p.menu_g_selecionado {
 #wrap-1,
 #footer-content,
 #theme-footer {
-  width: 1040px;
-  border-left: $margin solid transparent;
-  border-right: $margin solid transparent;
+  width: 960px + 2*$margin;
+}
+
+#theme-header,
+#footer-inner,
+.active_organization .profile-line-inner {
+  width: 960px;
+  margin: auto;
 }
 
 #wrap-1 {
@@ -268,8 +276,7 @@ p.menu_g_selecionado {
 
 #wrap-2 {
   padding: $margin;
-  padding-top: 0;
-  margin-top: 36px;
+  padding-top: 1px;
   background: transparent;
   border-color: transparent;
   border: none;
@@ -388,7 +395,73 @@ body.template-leftbar .box-1 {
     left: 0;
     z-index: 5;
   }
+}
 
+.profile-line {
+  $height: $margin;
+
+  background: #7857B8;
+  height: $height;
+  @extend .half-padding;
+  @extend .no-h-padding;
+
+  &.active_organization {
+    $image-size: 4*$base;
+
+    margin-bottom: $margin;
+
+    img {
+      float: left;
+      margin-left: $half-margin;
+      margin-right: $half-margin;
+      margin-top: -($image-size/2 - $height/2);
+      width: $image-size;
+      height: $image-size;
+    }
+    .profile-name {
+      float: left;
+    }
+  }
+
+  &.profile-header {
+    $image-size: 10*$base;
+
+    margin-top: $image-size/2 - $height/2 - $half-padding;
+
+    img {
+      float: right;
+      margin-left: $half-margin;
+      margin-right: $half-margin;
+      margin-top: -($image-size/2 - $height/2);
+      width: $image-size;
+      height: $image-size;
+    }
+    .profile-name {
+      float: right;
+    }
+  }
+
+  .profile-line-inner {
+
+    img {
+    }
+    .profile-name {
+      color: white;
+    }
+
+    #organization-menu {
+      float: right;
+
+      .organization-button {
+        @extend .half-padding;
+        height: $padding;
+        display: inline-block;
+        font-size: 11px;
+        background: #FAF7DC;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 #theme-footer {
@@ -397,11 +470,6 @@ body.template-leftbar .box-1 {
   width: 100%;
   margin: 0;
   /* FIXME missing top shadow */
-
-  #footer-inner {
-    width: 960px;
-    margin: auto;
-  }
 
   #footer-devel {
     @extend .pstyle-h4; /* FIXME */
@@ -454,52 +522,6 @@ body.template-leftbar .box-1 {
   margin-top: 0;
 }
 
-#active-organization {
-  background: #7857B8;
-  height: $margin;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  @extend .half-padding;
-  @extend .no-h-padding;
-
-  #active-organization-inner {
-    width: 960px;
-    margin: auto;
-
-    #organization-ident {
-      float: left;
-      margin-left: $half-margin;
-
-      img {
-        width: 46px;
-        height: 46px;
-        margin-top: -6px;
-        position: absolute;
-      }
-
-      h2 {
-        margin-left: 58px;
-        color: white;
-        display: inline;
-      }
-    }
-
-    #organization-menu {
-      float: right;
-
-      .organization-button {
-        @extend .half-padding;
-        height: $padding;
-        display: inline-block;
-        font-size: 11px;
-        background: #FAF7DC;
-        text-decoration: none;
-      }
-    }
-  }
-}
-
 /* end */
 
 /* escambo button */
@@ -513,35 +535,36 @@ body.template-leftbar .box-1 {
   display: inline-block;
   padding: $half-padding $padding;
   border: 0px;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 /* end */
 
 .cms-learning-plugin-interest-snippet {
   background: $c-knowledge-bg;
-  border: 1px dotted $c-knowledge-label;
+  border: $border dotted $c-knowledge-label;
   .label {
     background: $c-knowledge-label;
   }
 }
 .product-snippet {
   background: $c-offer-bg;
-  border: 1px solid $c-offer-label;
+  border: $border solid $c-offer-label;
+  border-radius: 5px;
   .label {
     background: $c-offer-label;
   }
 }
 .sniffer-plugin-interest-snippet {
   background: $c-interest-bg;
-  border: 1px dashed $c-interest-label;
+  border: $border dashed $c-interest-label;
   .label {
     background: $c-interest-label;
   }
 }
 
 .escambo-snippet {
-  padding: $padding;
+  padding: $padding - $border;
   margin-bottom: $half-margin;
   min-height: 7*$base;
   position: relative;
@@ -556,8 +579,8 @@ body.template-leftbar .box-1 {
     .label {
       text-transform: uppercase;
       padding: $padding;
+      margin: -($padding - $border);
       color: white;
-      margin: -$padding;
       display: inline-block;
     }
   }
@@ -569,6 +592,10 @@ body.template-leftbar .box-1 {
       margin-top: $margin;
       @extend .pstyle-tm2;
     }
+  }
+  .third-column {
+    width: $module2;
+    margin-bottom: $margin;
   }
 
   .exchange {
@@ -721,5 +748,30 @@ body.template-leftbar .box-1 {
       }
     }
   }
-
 }
+
+#escambo-enterprise-items {
+  width: $module7 + $padding;
+  margin-right: $margin;
+
+  h2 {
+    display: inline;
+  }
+
+  #offers {
+  }
+
+  .escambo-snippet {
+    .second-column {
+      width: $module3;
+    }
+    .third-column {
+      width: $module2 - $padding;
+    }
+  }
+}
+#escambo-enterprise-info {
+  width: $module3;
+}
+
+
