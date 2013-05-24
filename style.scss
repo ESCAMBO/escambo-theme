@@ -4,6 +4,8 @@
 
 /* Colors */
 
+$c-h2: #7E005D;
+
 $c-interest-bg: #F3F5ED;
 $c-interest-label: #79A458;
 $c-knowledge-bg: #FCF0EE;
@@ -14,6 +16,9 @@ $c-offer-label: #677FB7;
 $c-exchange: #394E41;
 
 $c-search-bg: #FAF7DC;
+
+$c-profile-info-bg: #EBF49D;
+$c-profile-info-border: #C5AAA5;
 
 $c-footer-bg: #FFF386;
 
@@ -108,99 +113,99 @@ $border: 1px;
 
 .pstyle-none {
   font-family: 'RobotoRegular'; /* FIXME to minionpro */
-  font-size: 12pt;
+  font-size: 12px;
 }
 .pstyle-basic {
   font-family: 'RobotoRegular';
-  font-size: 16pt;
+  font-size: 16px;
 }
 .pstyle-button {
   font-family: 'RobotoBlack';
-  font-size: 16pt;
+  font-size: 16px;
 }
 .pstyle-button-small {
   font-family: 'RobotoBoldCondensed';
-  font-size: 13pt;
+  font-size: 13px;
 }
 .pstyle-title {
   font-family: 'RobotoRegular'; /* FIXME to ubuntu */
-  font-size: 72pt;
+  font-size: 72px;
 }
 .pstyle-h1 {
   font-family: 'RobotoRegular';
-  font-size: 34pt;
+  font-size: 34px;
 }
 .pstyle-h2 {
   font-family: 'RobotoCondensed';
-  font-size: 26pt;
+  font-size: 26px;
 }
 .pstyle-h3 {
   font-family: 'RobotoBlack';
-  font-size: 21pt;
+  font-size: 21px;
 }
 .pstyle-h4 {
   font-family: 'RobotoBold';
-  font-size: 16pt;
+  font-size: 16px;
 }
 .pstyle-h5 {
   font-family: 'RobotoBlack';
-  font-size: 13pt;
+  font-size: 13px;
 }
 .pstyle-title-section {
   font-family: 'RobotoCondensed';
-  font-size: 92pt;
+  font-size: 92px;
 }
 .pstyle-field {
   font-family: 'RobotoRegular'; /* FIXME CourierNew */
-  font-size: 13pt;
+  font-size: 13px;
 }
 .pstyle-menu-big-selected {
   font-family: 'RobotoBoldCondensed';
-  font-size: 21pt;
+  font-size: 21px;
 }
 .pstyle-menu-big-unselected {
   font-family: 'RobotoCondensed';
-  font-size: 21pt;
+  font-size: 21px;
 }
 .pstyle-menu-medium-selected {
   font-family: 'RobotoBoldCondensed';
-  font-size: 16pt;
+  font-size: 16px;
 }
 .pstyle-menu-medium-unselected {
   font-family: 'RobotoCondensed';
-  font-size: 16pt;
+  font-size: 16px;
 }
 .pstyle-menu-small-selected {
   font-family: 'RobotoBoldCondensed';
-  font-size: 13pt;
+  font-size: 13px;
 }
 .pstyle-menu-small-unselected {
   font-family: 'RobotoCondensed';
-  font-size: 13pt;
+  font-size: 13px;
 }
 .pstyle-tp4 {
   font-family: 'RobotoRegular';
-  font-size: 42pt;
+  font-size: 42px;
 }
 .pstyle-tp3 {
   font-family: 'RobotoRegular';
-  font-size: 34pt;
+  font-size: 34px;
 }
 .pstyle-tp2 {
   font-family: 'RobotoRegular';
-  font-size: 26pt;
+  font-size: 26px;
 }
 .pstyle-tp1 {
   font-family: 'RobotoRegular';
-  font-size: 21pt;
+  font-size: 21px;
 }
 .pstyle-tm1 {
   font-family: 'RobotoRegular';
-  font-size: 13pt;
+  font-size: 13px;
 }
 .pstyle-tm2 {
   font-family: 'RobotoRegular';
-  font-size: 10pt;
+  font-size: 10px;
 }
 
 /* Overwrites and general styles */
@@ -213,28 +218,28 @@ body {
 
 h1, #content .no-boxes h1 {
   @extend .pstyle-h1;
-  color: #28370C;
-  font-weight: normal;
-  font-variant: normal;
-  text-align: left;
-  border: 0px;
 }
 h2, #content h2 {
   @extend .pstyle-h2;
   text-transform: uppercase;
-  color: $c-exchange;
+  color: $c-h2;
 }
 h3, #content h3 {
   @extend .pstyle-h3;
+  text-transform: uppercase;
 }
 h4, #content h4 {
   @extend .pstyle-h4;
   text-transform: uppercase;
-  color: $c-exchange;
-  margin-left:25px;
 }
 h5, #content h5 {
   @extend .pstyle-h5;
+  text-transform: uppercase;
+}
+
+#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
+  margin: 0;
+  margin-bottom: $half-margin;
 }
 
 p.menu_g_selecionado {
@@ -588,7 +593,7 @@ body.template-leftbar .box-1 {
     width: $module6;
     margin-right: $margin;
 
-    .description, .local {
+    .descripxion, .local {
       margin-top: $margin;
       @extend .pstyle-tm2;
     }
@@ -751,11 +756,16 @@ body.template-leftbar .box-1 {
 }
 
 #escambo-enterprise-items {
+  float: left;
   width: $module7 + $padding;
-  margin-right: $margin;
+  margin-right: $half-margin;
 
-  h2 {
-    display: inline;
+  h3 {
+    display: inline-block;
+    padding-left: $padding;
+  }
+  .see-all {
+    @extend .pstyle-tm1;
   }
 
   #offers {
@@ -771,7 +781,22 @@ body.template-leftbar .box-1 {
   }
 }
 #escambo-enterprise-info {
-  width: $module3;
+  float: left;
+  
+  h3 {
+    visibility: hidden;
+  }
+  .sidebar { 
+    width: $module3;
+    padding: $padding - $border;
+    border: $border solid $c-profile-info-border;
+    background: $c-profile-info-bg;
+
+    .info, .evaluation, .members {
+      border-bottom: $border solid $c-profile-info-border;
+      margin-bottom: $padding;
+    }
+  }
 }
 
 
