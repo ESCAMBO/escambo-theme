@@ -59,6 +59,15 @@ $half-margin: $margin/2;
 /* end */
 
 @font-face { 
+  font-family: 'RobotoBold';
+  src: url('fonts/roboto-bold.eot');
+  src: url('fonts/roboto-bold.eot?#iefix') format('embedded-opentype'),
+       url('fonts/roboto-bold.woff') format('woff'),
+       url('fonts/roboto-bold.ttf') format('truetype'),
+       url('fonts/roboto-bold.svg#webfont') format('svg');
+}
+
+@font-face { 
   font-family: 'RobotoCondensed';
   src: url('fonts/roboto-condensed-webfont.eot');
   src: url('fonts/roboto-condensed-webfont.eot?#iefix') format('embedded-opentype'),
