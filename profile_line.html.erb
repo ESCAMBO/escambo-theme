@@ -1,6 +1,6 @@
-<% if profile %>
+<% if profile and (@profile != @active_organization or active_organization) %>
 
-  <div class="profile-line <%= active_organization ? 'active_organization' : 'profile-header' %>">
+  <div class="profile-line <%= active_organization ? 'active-organization' : 'profile-header' %>">
     <div class="profile-line-inner">
       <%= profile_image profile, :portrait, :class => 'profile-image' %>
       <span class="profile-name"><%= profile.name %></span>
@@ -14,7 +14,7 @@
           <%= link_to _('products'), {:controller => :catalog, :profile => profile.identifier}, :class => 'organization-button' %>
           <%= link_to _('knowledges'), '', :class => 'organization-button' %>
           <%= link_to _('currencies'), '', :class => 'organization-button' %>
-          <%= link_to _('sniffer'), '', :class => 'organization-button' %>
+          <%= link_to _('sniffer'), {:controller => :sniffer_plugin_myprofile, :action => :search, :profile => profile.identifier}, :class => 'organization-button' %>
         </span>
       <% end %>
 

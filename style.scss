@@ -276,7 +276,7 @@ p.menu_g_selecionado {
 
 #theme-header,
 #footer-inner,
-.active_organization .profile-line-inner {
+.active-organization .profile-line-inner {
   width: 960px;
   margin: auto;
 }
@@ -285,14 +285,10 @@ p.menu_g_selecionado {
   position: relative;
   margin: auto;
 }
-
 #wrap-2 {
   padding: $margin;
-  padding-top: 1px;
   background: transparent;
-  border-color: transparent;
   border: none;
-  border-top: 1px solid #D3D7CF;
 }
 
 .box-2,
@@ -417,7 +413,7 @@ body.template-leftbar .box-1 {
   @extend .half-padding;
   @extend .no-h-padding;
 
-  &.active_organization {
+  &.active-organization {
     $image-size: 4*$base;
 
     margin-bottom: $margin;
@@ -836,4 +832,24 @@ body.template-leftbar .box-1 {
   }
 }
 
+/* Sniffer */
+.action-sniffer_plugin_myprofile-search {
+  .profile-line.active-organization {
+    margin: 0;
+    
+    img.profile-image {
+      z-index: 1000;
+      position: relative;
+    }
+  }
+ 
+  // necessary because of overflow:hidden;
+  #map-wrap {
+    margin-bottom: -$half-padding;
+  }
+  #map {
+    top: -$half-padding;
+  }
+
+}
 
