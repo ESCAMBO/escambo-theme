@@ -40,6 +40,7 @@ $module7: 7*$module + 6*$intercolumn;
 $module8: 8*$module + 7*$intercolumn;
 $module9: 9*$module + 8*$intercolumn;
 $module10: 10*$module + 9*$intercolumn;
+$wireframe: $module10 + $intercolumn;
 
 $margin: $intercolumn;
 $half-margin: $margin/2;
@@ -135,78 +136,97 @@ $border: 1px;
 .pstyle-h1 {
   font-family: 'RobotoRegular';
   font-size: 34px;
+  line-height: 34px;
 }
 .pstyle-h2 {
   font-family: 'RobotoCondensed';
   font-size: 26px;
+  line-height: 26px;
 }
 .pstyle-h3 {
   font-family: 'RobotoBlack';
   font-size: 21px;
+  line-height: 21px;
 }
 .pstyle-h4 {
   font-family: 'RobotoBold';
   font-size: 16px;
+  line-height: 16px;
 }
 .pstyle-h5 {
   font-family: 'RobotoBlack';
   font-size: 13px;
+  line-height: 13px;
 }
 .pstyle-title-section {
   font-family: 'RobotoCondensed';
   font-size: 92px;
+  line-height: 92px;
 }
 .pstyle-field {
   font-family: 'RobotoRegular'; /* FIXME CourierNew */
   font-size: 13px;
+  line-height: 13px;
 }
 .pstyle-menu-big-selected {
   font-family: 'RobotoBoldCondensed';
   font-size: 21px;
+  line-height: 21px;
 }
 .pstyle-menu-big-unselected {
   font-family: 'RobotoCondensed';
   font-size: 21px;
+  line-height: 21px;
 }
 .pstyle-menu-medium-selected {
   font-family: 'RobotoBoldCondensed';
   font-size: 16px;
+  line-height: 16px;
 }
 .pstyle-menu-medium-unselected {
   font-family: 'RobotoCondensed';
   font-size: 16px;
+  line-height: 16px;
 }
 .pstyle-menu-small-selected {
   font-family: 'RobotoBoldCondensed';
   font-size: 13px;
+  line-height: 13px;
 }
 .pstyle-menu-small-unselected {
   font-family: 'RobotoCondensed';
   font-size: 13px;
+  line-height: 13px;
 }
 .pstyle-tp4 {
   font-family: 'RobotoRegular';
   font-size: 42px;
+  line-height: 42px;
 }
 .pstyle-tp3 {
   font-family: 'RobotoRegular';
   font-size: 34px;
+  line-height: 34px;
 }
 .pstyle-tp2 {
   font-family: 'RobotoRegular';
   font-size: 26px;
+  line-height: 26px;
 }
 .pstyle-tp1 {
   font-family: 'RobotoRegular';
   font-size: 21px;
+  line-height: 21px;
 }
 .pstyle-tm1 {
   font-family: 'RobotoRegular';
   font-size: 13px;
+  line-height: 13px;
 }
 .pstyle-tm2 {
   font-family: 'RobotoRegular';
   font-size: 10px;
+  line-height: 10px;
 }
 
 /* Overwrites and general styles */
@@ -217,8 +237,9 @@ body {
   overflow-x: hidden;
 }
 
-h1, #content .no-boxes h1 {
+h1, #content h1 {
   @extend .pstyle-h1;
+  text-align: left;
 }
 h2, #content h2 {
   @extend .pstyle-h2;
@@ -268,25 +289,27 @@ p.menu_g_selecionado {
 /* end */
 
 /* Fix to 960px effective content */
+#theme-header,
+#profile-line-wrap-2,
 #wrap-1,
-#footer-content,
-#theme-footer {
-  width: 960px + 2*$margin;
+#footer-wrap-1,
+#legend-wrap-2, {
+  width: $wireframe;
+  margin: auto;
 }
 
-#theme-header,
-#footer-inner,
-.active-organization .profile-line-inner {
-  width: 960px;
-  margin: auto;
+#theme-wrap,
+#profile-line,
+#content,
+#footer-wrap-2,
+#legend, {
+  padding: 0 $padding;
 }
 
 #wrap-1 {
   position: relative;
-  margin: auto;
 }
 #wrap-2 {
-  padding: $margin;
   background: transparent;
   border: none;
 }
@@ -405,51 +428,49 @@ body.template-leftbar .box-1 {
   }
 }
 
-.profile-line {
+#profile-line-wrap-1 {
   $height: $margin;
 
   background: #7857B8;
   height: $height;
+  margin-bottom: $margin;
   @extend .half-padding;
   @extend .no-h-padding;
 
-  &.active-organization {
-    $image-size: 4*$base;
+  #profile-line {
+    $height: $margin;
 
-    margin-bottom: $margin;
+    &.active-organization {
+      $image-size: 4*$base;
 
-    img {
-      float: left;
-      margin-left: $half-margin;
-      margin-right: $half-margin;
-      margin-top: -($image-size/2 - $height/2);
-      width: $image-size;
-      height: $image-size;
+      img {
+        float: left;
+        margin-right: $half-margin;
+        margin-top: -($image-size/2 - $height/2);
+        width: $image-size;
+        height: $image-size;
+      }
+      .profile-name {
+        float: left;
+      }
     }
-    .profile-name {
-      float: left;
+
+    &.profile-header {
+      $image-size: 10*$base;
+
+      margin-top: $image-size/2 - $height/2 - $half-padding;
+
+      img {
+        float: right;
+        margin-left: $half-margin;
+        margin-top: -($image-size/2 - $height/2);
+        width: $image-size;
+        height: $image-size;
+      }
+      .profile-name {
+        float: right;
+      }
     }
-  }
-
-  &.profile-header {
-    $image-size: 10*$base;
-
-    margin-top: $image-size/2 - $height/2 - $half-padding;
-
-    img {
-      float: right;
-      margin-left: $half-margin;
-      margin-right: $half-margin;
-      margin-top: -($image-size/2 - $height/2);
-      width: $image-size;
-      height: $image-size;
-    }
-    .profile-name {
-      float: right;
-    }
-  }
-
-  .profile-line-inner {
 
     img {
     }
@@ -494,7 +515,6 @@ body.template-leftbar .box-1 {
 
 #header-links { 
   float: left;
-  margin-left: $padding;
 }
 #user .not-logged-in {
   display: block;
@@ -532,7 +552,7 @@ body.template-leftbar .box-1 {
 
 /* end */
 
-/* Buttons */
+/* Buttons and inputs */
 
 .action-button {
   @extend .pstyle-button-small;
@@ -545,6 +565,50 @@ body.template-leftbar .box-1 {
   border: 0px;
   border-radius: 3px;
 }
+
+.search-box {
+  background: $c-search-bg;
+  padding: $padding - $border;
+  border-radius: 3px;
+  border: $border solid black;
+}
+
+.search-field {
+  background: white;
+  border: 1px solid #aaa;
+  box-shadow: 1px 1px 1px 0px #aaa;
+  height: 3*$base;
+
+  .search-input {
+    float: left;
+    height: 2*$base;
+    width: 80%;
+    width: -webkit-calc(100% - 30px - 24px);
+    width: -moz-calc(100% - 30px - 24px);
+    width: -o-calc(100% - 30px - 24px);
+    width: calc(100% - 30px - 24px);
+    padding: $half-padding $padding;
+    @extend .pstyle-field;
+    outline: none;
+    border: none;
+    font-style: normal;
+
+    &.blur {
+
+    }
+  }
+
+  .search-submit {
+    float: right;
+    cursor: pointer;
+    background: transparent url(/designs/themes/escambo/images/lupa.png) no-repeat left 8px;
+    border: none;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+  }
+}
+
 
 /* end */
 
@@ -614,22 +678,42 @@ body.template-leftbar .box-1 {
   }
 }
 
-#search-results{
+/* Search */
+
+#escambo-search-form {
+  @extend .search-box;
+  margin: -$margin;
+  margin-top: $margin;
+  margin-bottom: $margin;
+
+  form {
+    .search-field {
+      #search-input {
+        @extend .search-input;
+      }
+      input[type=submit] {
+        @extend .search-submit;
+      }
+    }
+  }
+}
+
+#search-results {
   li.search-profile-item {
     display: inline-block;
   }
 
   /*place here all background and border combinations */
-  /*begin*/
-  .inside-border-purple{
+  .inside-border-purple {
      border-color:#7F0085;
   }
-
-  .bg-purple{
+  .bg-purple {
     background-color:#F3E1EF;
   }
-  /*end*/
 }
+/*end*/
+
+/* Profile block */
 
 .escambo-plugin-profile-block {
   width: $module2;
@@ -718,45 +802,7 @@ body.template-leftbar .box-1 {
   }
 }
 
-#escambo-search-form {
-  background: $c-search-bg;
-  padding: $padding;
-  border-radius: 3px;
-  border: 1px solid black;
-  margin: -$half-margin;
-  margin-top: $margin;
-  margin-bottom: $margin;
-
-  form {
-
-    .search-field {
-      background: white;
-      border: 1px solid #aaa;
-      box-shadow: 1px 1px 1px 0px #aaa;
-
-      #search-input {
-        @extend .pstyle-field;
-        outline: none;
-        border: none;
-        padding: $half-padding $padding;
-        font-style: normal;
-
-        &.blur {
-
-        }
-      }
-
-      input[type=submit] {
-        background: transparent url(/designs/themes/escambo/images/lupa.png) no-repeat left 7px;
-        border: none;
-        width: 30px;
-        height: 30px;
-        padding: 0;
-        float: right;
-      }
-    }
-  }
-}
+/* end */
 
 #escambo-enterprise-items {
   float: left;
@@ -834,7 +880,7 @@ body.template-leftbar .box-1 {
 
 /* Sniffer */
 .action-sniffer_plugin_myprofile-search {
-  .profile-line.active-organization {
+  #profile-line-wrap-1 {
     margin: 0;
     
     img.profile-image {
@@ -842,14 +888,36 @@ body.template-leftbar .box-1 {
       position: relative;
     }
   }
- 
-  // necessary because of overflow:hidden;
-  #map-wrap {
-    margin-bottom: -$half-padding;
+
+  #content {
+    padding: 0;
   }
-  #map {
-    top: -$half-padding;
+ 
+  #map-wrap {
+
+    #map-overlay-wrap-1 {
+      #map-overlay-wrap-2 {
+        width: $wireframe;
+        
+        #map-overlay {
+          margin-top: $margin;
+          padding: 0 $padding;
+
+          #product-search {
+            width: $module4 + $intercolumn;
+            margin-top: -$half-padding;
+            margin-right: $half-margin;
+            position: relative;
+            left: $margin;
+          }
+        }
+      }
+    }
   }
 
+  #legend-wrap-1 {
+    background: $c-search-bg;
+    padding: $padding 0;
+  }
 }
 
