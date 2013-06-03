@@ -69,6 +69,19 @@ $border: 1px;
 
 /* end */
 
+/* Images */
+.icon {
+  width: $base*2.5;        
+  height: $base*2.5;
+}
+
+$image-zoom: '/designs/themes/escambo/images/lupa.png';
+$image-heart-empty: '/designs/themes/escambo/images/heart-empty.png';
+$image-exchange: '/designs/themes/escambo/images/troca_simbolo.png';
+$image-exchange-empty: '/designs/themes/escambo/images/troca_simbolo_vazio.png';
+
+/* Fonts */
+
 @font-face { 
   font-family: 'RobotoBold';
   src: url('fonts/roboto-bold.eot');
@@ -601,7 +614,7 @@ body.template-leftbar .box-1 {
   .search-submit {
     float: right;
     cursor: pointer;
-    background: transparent url(/designs/themes/escambo/images/lupa.png) no-repeat left 8px;
+    background: transparent url($image-zoom) no-repeat left 8px;
     border: none;
     width: 30px;
     height: 30px;
@@ -766,25 +779,20 @@ body.template-leftbar .box-1 {
       height: $base*2;
       margin-left: $module2 -($base*4);
 
-      .icon{
-        width:$base*2.5;        
-        height:$base*2.5;
-      }
-
       .has-exchanged{
         @extend .icon;
-        background: url(images/troca_simbolo.png);
+        background: url($image-exchange);
       }
 
       .has-not-exchanged{
         @extend .icon;
-        background: url(images/troca_simbolo_vazio.png);
+        background: url($image-exchange-empty);
       }
 
       .is-bookmarked{}
 
       .isnot-bookmarked{
-        background: url(images/heart-empty.png);
+        background: url($image-heart-empty);
       }
     }
 
@@ -906,9 +914,7 @@ body.template-leftbar .box-1 {
           #product-search {
             width: $module4 + $intercolumn;
             margin-top: -$half-padding;
-            margin-right: $half-margin;
-            position: relative;
-            left: $margin;
+            margin-right: -$half-margin;
           }
         }
       }
