@@ -442,7 +442,7 @@ body.template-leftbar .box-1 {
 
   background: #7857B8;
   height: $height;
-  padding: $half-padding;
+  padding: $half-padding 0;
   margin-bottom: $margin;
 
   &.active-organization {
@@ -463,6 +463,9 @@ body.template-leftbar .box-1 {
   &.profile-header {
     $image-size: 10*$base;
 
+    #profile-line-wrap-2 {
+      width: 100%;
+    }
     margin-top: ($image-size/2 - $height/2) + $half-margin;
 
     img {
