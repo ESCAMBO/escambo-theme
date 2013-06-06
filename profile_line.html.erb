@@ -1,9 +1,9 @@
 <% if profile and (@profile != @active_organization or active_organization) %>
 
-  <div id="profile-line-wrap-1">
+  <div id="profile-line-wrap-1" class="<%= active_organization ? 'active-organization' : 'profile-header' %>">
     <div id="profile-line-wrap-2">
 
-      <div id="profile-line" class="<%= active_organization ? 'active-organization' : 'profile-header' %>">
+      <div id="profile-line">
         <%= profile_image profile, :portrait, :class => 'profile-image' %>
         <span class="profile-name"><%= profile.name %></span>
 

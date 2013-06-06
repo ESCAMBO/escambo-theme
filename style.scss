@@ -445,59 +445,55 @@ body.template-leftbar .box-1 {
   padding: $half-padding;
   margin-bottom: $margin;
 
-  #profile-line {
-    $height: $margin;
-
-    &.active-organization {
-      $image-size: 4*$base;
-
-      img {
-        float: left;
-        margin-right: $half-margin;
-        margin-top: -($image-size/2 - $height/2);
-        width: $image-size;
-        height: $image-size;
-      }
-      .profile-name {
-        float: left;
-      }
-    }
-
-    &.profile-header {
-      $image-size: 10*$base;
-
-      margin-top: $image-size/2 - $height/2 - $half-padding;
-
-      img {
-        float: right;
-        margin-left: $half-margin;
-        margin-top: -($image-size/2 - $height/2);
-        width: $image-size;
-        height: $image-size;
-      }
-      .profile-name {
-        float: right;
-      }
-    }
+  &.active-organization {
+    $image-size: 4*$base;
 
     img {
+      float: left;
+      margin-right: $half-margin;
+      margin-top: -($image-size/2 - $height/2);
+      width: $image-size;
+      height: $image-size;
     }
     .profile-name {
-      line-height: 2*$base;
-      color: white;
+      float: left;
     }
+  }
 
-    #organization-menu {
+  &.profile-header {
+    $image-size: 10*$base;
+
+    margin-top: ($image-size/2 - $height/2) + $half-margin;
+
+    img {
       float: right;
+      margin-left: $half-margin;
+      margin-top: -($image-size/2 - $height/2);
+      width: $image-size;
+      height: $image-size;
+    }
+    .profile-name {
+      float: right;
+    }
+  }
 
-      .organization-button {
-        height: $padding;
-        padding: $half-padding;
-        display: inline-block;
-        font-size: 11px;
-        background: #FAF7DC;
-        text-decoration: none;
-      }
+  img {
+  }
+  .profile-name {
+    line-height: 2*$base;
+    color: white;
+  }
+
+  #organization-menu {
+    float: right;
+
+    .organization-button {
+      height: $padding;
+      padding: $half-padding;
+      display: inline-block;
+      font-size: 11px;
+      background: #FAF7DC;
+      text-decoration: none;
     }
   }
 }
