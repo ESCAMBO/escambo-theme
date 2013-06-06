@@ -403,8 +403,9 @@ body.template-leftbar .box-1 {
 }
 
 #theme-header {
-  height: auto;
   position: relative;
+  height: 7*$base;
+  margin-bottom: $half-margin;
 
   .logged {
     h1 {
@@ -413,7 +414,7 @@ body.template-leftbar .box-1 {
       margin-bottom: 40px;
     }
     #user .not-logged-in, #header-links { 
-      margin-top: 6*$base;
+      margin-top: 5*$base;
     }
   }
 
@@ -443,7 +444,6 @@ body.template-leftbar .box-1 {
   height: $height;
   padding: $half-padding;
   margin-bottom: $margin;
-  margin-top: $half-margin;
 
   #profile-line {
     $height: $margin;
@@ -885,7 +885,7 @@ body.template-leftbar .box-1 {
 /* Sniffer */
 .action-sniffer_plugin_myprofile-search {
   #profile-line-wrap-1 {
-    margin: 0;
+    margin-bottom: 0;
     
     img.profile-image {
       z-index: 1000;
