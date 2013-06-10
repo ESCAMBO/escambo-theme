@@ -1,29 +1,15 @@
+@import "exchange";
+
 .clean {
   clear: both;
 }
+.container-clean {
+  overflow: hidden;
+  display: inline-block; /* Necessary to trigger "hasLayout" in IE */
+  display: block; /* Sets element back to block */
+}
 
-/* Colors */
-
-$c-h2: #7E005D;
-$c-h3: #394E41;
-
-$c-interest-bg: #F3F5ED;
-$c-interest-label: #79A458;
-$c-knowledge-bg: #FCF0EE;
-$c-knowledge-label: #C37169;
-$c-offer-bg: #F1F1F7;
-$c-offer-label: #677FB7;
-
-$c-exchange: #394E41;
-
-$c-search-bg: #FAF7DC;
-
-$c-profile-info-bg: #EBF49D;
-$c-profile-info-border: #C5AAA5;
-
-$c-footer-bg: #FFF386;
-
-/* Widths for paddings, margins and sizes definition */
+/* Base measuments */
 
 $base: 12px;
 $module: 6*$base;
@@ -56,7 +42,25 @@ $border: 1px;
   padding-right: 0;
 }
 
-/* end */
+/* Colors */
+
+$color-h2: #7E005D;
+$color-h3: #394E41;
+
+$color-interest-bg: #F3F5ED;
+$color-interest-label: #79A458;
+$color-knowledge-bg: #FCF0EE;
+$color-knowledge-label: #C37169;
+$color-offer-bg: #F1F1F7;
+$color-offer-label: #677FB7;
+
+$color-search-bg: #FAF7DC;
+
+$color-profile-info-bg: #EBF49D;
+$color-profile-info-border: #C5AAA5;
+
+$color-footer-bg: #FFF386;
+
 
 /* Images */
 $image-zoom: '/designs/themes/escambo/images/lupa.png';
@@ -252,25 +256,32 @@ h1, #content h1 {
 h2, #content h2 {
   @extend .pstyle-h2;
   text-transform: uppercase;
-  color: $c-h2;
+  color: $color-h2;
 }
 h3, #content h3 {
   @extend .pstyle-h3;
   text-transform: uppercase;
-  color: $c-h3;
+  color: $color-h3;
   font-weight: 300;
 }
 h4, #content h4 {
   @extend .pstyle-h4;
   text-transform: uppercase;
-  color: $c-h3;
+  color: $color-h3;
   font-weight: 300;
 }
 h5, #content h5 {
   @extend .pstyle-h5;
   text-transform: uppercase;
-  color: $c-h3;
+  color: $color-h3;
   font-weight: 300;
+}
+
+th, td {
+  @extend .pstyle-none;
+  height: auto;
+  padding: 0;
+  border: none;
 }
 
 #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
@@ -502,7 +513,7 @@ body.template-leftbar .box-1 {
 }
 
 #theme-footer {
-  background: $c-footer-bg;
+  background: $color-footer-bg;
   height: 310px;
   width: 100%;
   margin: 0;
@@ -516,7 +527,7 @@ body.template-leftbar .box-1 {
     @extend .pstyle-h4; /* FIXME */
   }
   #footer-devel b, #footer-support {
-    color: $c-exchange;
+    color: $color-exchange;
   }
 }
 
@@ -562,20 +573,8 @@ body.template-leftbar .box-1 {
 
 /* Buttons and inputs */
 
-.action-button {
-  @extend .pstyle-button-small;
-  background: $c-exchange;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  padding: $half-padding $padding;
-  border: 0px;
-  border-radius: 3px;
-}
-
 .search-box {
-  background: $c-search-bg;
+  background: $color-search-bg;
   padding: $padding - $border;
   border-radius: 3px;
   border: $border solid black;
@@ -621,25 +620,25 @@ body.template-leftbar .box-1 {
 /* end */
 
 .cms-learning-plugin-interest-snippet {
-  background: $c-knowledge-bg;
-  border: $border dotted $c-knowledge-label;
+  background: $color-knowledge-bg;
+  border: $border dotted $color-knowledge-label;
   .label {
-    background: $c-knowledge-label;
+    background: $color-knowledge-label;
   }
 }
 .product-snippet {
-  background: $c-offer-bg;
-  border: $border solid $c-offer-label;
+  background: $color-offer-bg;
+  border: $border solid $color-offer-label;
   border-radius: 5px;
   .label {
-    background: $c-offer-label;
+    background: $color-offer-label;
   }
 }
 .sniffer-plugin-interest-snippet {
-  background: $c-interest-bg;
-  border: $border dashed $c-interest-label;
+  background: $color-interest-bg;
+  border: $border dashed $color-interest-label;
   .label {
-    background: $c-interest-label;
+    background: $color-interest-label;
   }
 }
 
@@ -679,11 +678,11 @@ body.template-leftbar .box-1 {
   }
 
   .exchange {
-    @extend .action-button;
     position: absolute;
     bottom: $padding;
     right: $padding;
   }
+
 }
 
 /* Search */
@@ -841,11 +840,11 @@ body.template-leftbar .box-1 {
   .sidebar { 
     width: $module3;
     padding: $padding - $border;
-    border: $border solid $c-profile-info-border;
-    background: $c-profile-info-bg;
+    border: $border solid $color-profile-info-border;
+    background: $color-profile-info-bg;
 
     .info, .evaluation, .members {
-      border-bottom: $border solid $c-profile-info-border;
+      border-bottom: $border solid $color-profile-info-border;
       padding-bottom: $padding;
       margin-bottom: $padding;
     }
@@ -895,30 +894,6 @@ body.template-leftbar .box-1 {
   #content {
     padding: 0;
   }
- 
-  #map-wrap {
 
-    #map-overlay-wrap-1 {
-      #map-overlay-wrap-2 {
-        width: $wireframe;
-        
-        #map-overlay {
-          margin-top: $margin;
-          padding: 0 $padding;
-
-          #product-search {
-            width: $module4 + $intercolumn;
-            margin-top: -$half-padding;
-            margin-right: -$half-margin;
-          }
-        }
-      }
-    }
-  }
-
-  #legend-wrap-1 {
-    background: $c-search-bg;
-    padding: $padding 0;
-  }
 }
 
