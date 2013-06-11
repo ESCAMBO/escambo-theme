@@ -1,4 +1,5 @@
 @import "exchange";
+@import "sniffer";
 
 .clean {
   clear: both;
@@ -574,50 +575,21 @@ body.template-leftbar .box-1 {
 /* Buttons and inputs */
 
 .search-box {
-  background: $color-search-bg;
-  padding: $padding - $border;
-  border-radius: 3px;
-  border: $border solid black;
+  @extend .sniffer-search-box;
 }
 
 .search-field {
-  background: white;
-  border: 1px solid #aaa;
-  box-shadow: 1px 1px 1px 0px #aaa;
-  height: 3*$base;
+  @extend .sniffer-search-field;
 
   .search-input {
-    float: left;
-    height: 2*$base;
-    width: 80%;
-    width: -webkit-calc(100% - 30px - 24px);
-    width: -moz-calc(100% - 30px - 24px);
-    width: -o-calc(100% - 30px - 24px);
-    width: calc(100% - 30px - 24px);
-    padding: $half-padding $padding;
-    @extend .pstyle-field;
-    outline: none;
-    border: none;
-    font-style: normal;
-
-    &.blur {
-
-    }
+    @extend .sniffer-search-input;
   }
-
   .search-submit {
-    float: right;
-    cursor: pointer;
-    background: transparent url($image-zoom) no-repeat left 8px;
-    border: none;
-    width: 30px;
-    height: 30px;
-    padding: 0;
+    @extend .sniffer-search-submit;
   }
 }
 
-
-/* end */
+/* Snippets */
 
 .cms-learning-plugin-interest-snippet {
   background: $color-knowledge-bg;
