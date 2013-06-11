@@ -287,6 +287,7 @@ th, td {
 
 #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
   margin: 0;
+  padding: 0 $padding;
   margin-bottom: $half-margin;
 }
 
@@ -320,7 +321,6 @@ p.menu_g_selecionado {
 
 #theme-wrap,
 #profile-line,
-#content,
 #footer-wrap-2,
 #legend, {
   padding: 0 $padding;
@@ -661,7 +661,7 @@ body.template-leftbar .box-1 {
 
 #escambo-search-form {
   @extend .search-box;
-  margin: -$margin;
+  margin: -$padding;
   margin-top: $margin;
   margin-bottom: $margin;
 
