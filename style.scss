@@ -319,11 +319,15 @@ p.menu_g_selecionado {
   margin: auto;
 }
 
-#theme-wrap,
+#theme-header-wrap,
 #profile-line,
 #footer-wrap-2,
 #legend, {
   padding: 0 $padding;
+}
+#theme-header-wrap,
+#profile-line {
+  padding-right: 0;
 }
 
 #wrap-1 {
