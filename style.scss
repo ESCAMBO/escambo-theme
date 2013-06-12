@@ -375,6 +375,11 @@ body.template-leftbar .box-1 {
   padding: 0;
 }
 
+#main-content-wrapper-8 {
+  width: 960px;
+  margin-left: -12px;
+
+}
 /* end */
 
 /* Theme structure */
@@ -619,7 +624,7 @@ body.template-leftbar .box-1 {
 
 /* end */
 
-.cms-learning-plugin-interest-snippet {
+.cms-learning-plugin-learning-snippet {
   background: $color-knowledge-bg;
   border: $border dotted $color-knowledge-label;
   .label {
