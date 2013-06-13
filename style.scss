@@ -297,9 +297,25 @@ th, td {
   margin-bottom: $half-margin;
 }
 
-p.menu_g_selecionado {
-  @extend .pstyle-menu-big-selected;
-  line-height: 0;
+label, .formlabel {
+  padding: 0;
+  padding-bottom: $padding;
+  font-weight: bold;
+  color: black;
+}
+
+input[type=text], .formfield input[type=text],
+textarea, .formfield textarea {
+  width: $module3;
+  padding: ($half-padding - $border) ($padding - $border);
+  text-indent: 0;
+  margin-bottom: $margin;
+
+  background: none;
+  border: $border solid #999;
+  border-radius: 3px;
+  @extend .pstyle-field;
+  color: inherit;
 }
 
 .controller-content_viewer .no-boxes, .controller-profile .no-boxes {
@@ -909,4 +925,13 @@ body.template-leftbar .box-1 {
     padding: 0;
   }
 }
+
+/* Exchange */
+
+// FIXME move to exchange
+p.menu_g_selecionado {
+  @extend .pstyle-menu-big-selected;
+  line-height: 0;
+}
+
 
