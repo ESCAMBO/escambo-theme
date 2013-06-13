@@ -278,6 +278,12 @@ h5, #content h5 {
   font-weight: 300;
 }
 
+table {
+  width: auto;
+}
+tr:hover td {
+  background:transparent;
+}
 th, td {
   @extend .pstyle-none;
   height: auto;
@@ -380,11 +386,6 @@ body.template-leftbar .box-1 {
   padding: 0;
 }
 
-#main-content-wrapper-8 {
-  width: 960px;
-  margin-left: -12px;
-
-}
 /* end */
 
 /* Theme structure */
@@ -582,6 +583,13 @@ body.template-leftbar .box-1 {
 /* end */
 
 /* Buttons and inputs */
+
+.action-button {
+  @extend .exchange-action-button;
+}
+.exchange-action-button {
+  @extend .pstyle-button-small;
+}
 
 .search-box {
   @extend .sniffer-search-box;
@@ -782,7 +790,7 @@ body.template-leftbar .box-1 {
   }
 
   .exchange-button{
-    @extend .action-button;    
+    @extend .exchange-action-button;    
     margin-top: -28px;
     margin-left: $base;
   }
@@ -801,6 +809,9 @@ body.template-leftbar .box-1 {
   }
   .see-all {
     @extend .pstyle-tm1;
+  }
+  .add {
+    margin-right: $half-margin;
   }
 
   #offers {
@@ -857,7 +868,7 @@ body.template-leftbar .box-1 {
       }
 
       .contact-button a {
-        @extend .action-button;
+        @extend .exchange-action-button;
         display: block;
       }
     }

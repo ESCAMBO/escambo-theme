@@ -10,13 +10,13 @@
         <% if active_organization %>
           <span id="organization-menu">
             <%= link_to _('profile'), profile.url, :class => 'organization-button' %>
-            <%= link_to _('members'), {:controller => :profile, :action => :members, :profile => profile.identifier}, :class => 'organization-button' %>
-            <%= link_to _('exchanges'), {:controller => :exchange_plugin_myprofile, :action => :index, :profile => profile.identifier}, :class => 'organization-button'  %>
+            <%= link_to _('members'), {:controller => :profile, :action => :members}, :class => 'organization-button' %>
+            <%= link_to _('exchanges'), {:controller => :exchange_plugin_myprofile, :action => :index}, :class => 'organization-button'  %>
             <%= link_to _('network'), '', :class => 'organization-button' %>
-            <%= link_to _('products'), {:controller => :catalog, :profile => profile.identifier}, :class => 'organization-button' %>
+            <%= link_to _('offers'), {:controller => :profile, :action => :products}, :class => 'organization-button' %>
             <%= link_to _('knowledges'), {:controller => :profile, :action => :knowledges}, :class => 'organization-button' %>
             <%= link_to _('interests'), {:controller => :profile, :action => :interests}, :class => 'organization-button' %>
-            <%= link_to _('currencies'), '', :class => 'organization-button' %>
+            <%= link_to _('currencies'), {:controller => :currency_plugin_myprofile, :action => :index, :profile => profile.identifier}, :class => 'organization-button' %>
             <%= link_to _('sniffer'), {:controller => :sniffer_plugin_myprofile, :action => :search, :profile => profile.identifier}, :class => 'organization-button' %>
           </span>
         <% end %>
