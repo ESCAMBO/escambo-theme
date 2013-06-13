@@ -336,6 +336,11 @@ p.menu_g_selecionado {
   padding-right: 0;
 }
 
+#content {
+  margin-top: 0;
+}
+
+
 #wrap-1 {
   position: relative;
 }
@@ -411,6 +416,7 @@ body.template-leftbar .box-1 {
 }
 
 .header-button {
+  display: inline-block;
   padding: $padding;
   background: #F6FCA6;
   margin-right: $half-padding;
@@ -418,6 +424,7 @@ body.template-leftbar .box-1 {
   font-weight: bold;
   text-decoration: none;
   color: black;
+
   &:hover {
     background: #7F005C;
     color: white;
@@ -426,8 +433,6 @@ body.template-leftbar .box-1 {
 
 #theme-header {
   position: relative;
-  height: 7*$base;
-  margin-bottom: $half-margin;
 
   .logged {
     h1 {
@@ -436,7 +441,10 @@ body.template-leftbar .box-1 {
       margin-bottom: 40px;
     }
     #user .not-logged-in, #header-links { 
-      margin-top: 5*$base;
+      margin-top: 4*$base;
+    }
+    .user-logged-right {
+      height: 4*$base + $padding;
     }
   }
 
@@ -473,7 +481,7 @@ body.template-leftbar .box-1 {
     img {
       float: left;
       margin-right: $half-margin;
-      margin-top: -($image-size/2 - $height/2);
+      margin-top: -$half-padding;
       width: $image-size;
       height: $image-size;
     }
@@ -545,39 +553,52 @@ body.template-leftbar .box-1 {
 
 #header-links { 
   float: left;
+
+  a {
+    z-index: 10;
+    position: relative;
+    opacity: .7;
+  }
 }
-#user .not-logged-in {
-  display: block;
-}
+
 #user .not-logged-in a, #header-links a { 
   @extend .header-button;
 }
-#header-links a {
-  z-index: 10;
-  position: relative;
-  opacity: .7;
-}
+#user {
 
-.user-logged-left {
-  float: left;
-}
+  .logged-in {
+    @extend .container-clean;
+    border: $border solid black;
+    border-top: none;
+    background: #FAF7DC;
+  }
+  .logged-in, .not-logged-in {
+    display: block;
+  }
 
-.user-logged-right {
-  float: right;
-  text-align: left;
-  padding: 0 10px;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  font-weight: bold;
-  background: #FAF7DC;
-  height: 69px;
-}
-.user-logged-right select {
-  width: 160px;
-}
+  .user-logged-left {
+    float: left;
 
-#content {
-  margin-top: 0;
+    .profile-image {
+      height: 7*$base;
+      width: 7*$base;
+    }
+  }
+
+  .user-logged-right {
+    float: right;
+    padding: $padding - $border;
+    font-weight: bold;
+    text-align: left;
+
+    > * {
+      margin-bottom: $half-padding;
+    }
+
+    select {
+      width: $module2;
+    }
+  }
 }
 
 /* end */
@@ -782,14 +803,14 @@ body.template-leftbar .box-1 {
       }
     }
 
-    .profile-image{      
+    .profile-image {      
       width: $module2;
       height: $base*14;      
       margin-top: -($base*2);
     }   
   }
 
-  .exchange-button{
+  .exchange-button {
     @extend .exchange-action-button;    
     margin-top: -28px;
     margin-left: $base;
