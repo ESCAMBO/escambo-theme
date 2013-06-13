@@ -589,6 +589,9 @@ body.template-leftbar .box-1 {
 
 /* Buttons and inputs */
 
+.action-button {
+  @extend .exchange-action-button;
+}
 .exchange-action-button {
   @extend .pstyle-button-small;
 }
@@ -808,6 +811,9 @@ body.template-leftbar .box-1 {
   }
   .see-all {
     @extend .pstyle-tm1;
+  }
+  .add {
+    margin-right: $half-margin;
   }
 
   #offers {
