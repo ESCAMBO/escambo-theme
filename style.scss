@@ -309,7 +309,7 @@ textarea, .formfield textarea {
   width: $module3;
   padding: ($half-padding - $border) ($padding - $border);
   text-indent: 0;
-  margin-bottom: $margin;
+  margin-bottom: $half-margin;
 
   background: none;
   border: $border solid #999;
@@ -565,6 +565,7 @@ body.template-leftbar .box-1 {
       width: 100%;
     }
     margin-top: ($image-size/2 - $height/2) + $half-margin;
+    margin-bottom: ($image-size/2 - $height/2) + $half-margin;
 
     img {
       float: right;
