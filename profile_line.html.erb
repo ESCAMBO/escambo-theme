@@ -7,7 +7,7 @@
         <%= profile_image profile, :portrait, :class => 'profile-image' %>
         <span class="profile-name"><%= profile.name %></span>
 
-        <% admin = (user.is_admin?(environment)) || user.is_admin?(profile) %>
+        <% admin = user and (user.is_admin?(environment) or user.is_admin?(profile)) %>
         <span id="organization-menu">
           <%= link_to _('profile'), profile.url, :class => 'organization-button' %>
           <%= link_to _('members'), {:controller => :profile, :action => :members}, :class => 'organization-button' %>
