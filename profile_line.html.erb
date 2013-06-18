@@ -10,14 +10,14 @@
         <% admin = user and (user.is_admin?(environment) or user.is_admin?(profile)) %>
         <span id="organization-menu">
           <%= link_to _('profile'), profile.url, :class => 'organization-button' %>
-          <%= link_to _('members'), {:controller => :profile, :action => :members}, :class => 'organization-button' %>
-          <%= link_to _('exchanges'), {:controller => :exchange_plugin_myprofile, :action => :index}, :class => 'organization-button' if admin %>
+          <%= link_to _('members'), {:controller => :profile, :profile => profile.identifier, :action => :members}, :class => 'organization-button' %>
+          <%= link_to _('exchanges'), {:controller => :exchange_plugin_myprofile, :profile => profile.identifier, :action => :index}, :class => 'organization-button' if admin %>
           <%# link_to _('network'), '', :class => 'organization-button' %>
-          <%= link_to _('offers'), {:controller => :profile, :action => :products}, :class => 'organization-button' %>
-          <%= link_to _('knowledges'), {:controller => :profile, :action => :knowledges}, :class => 'organization-button' %>
-          <%= link_to _('interests'), {:controller => :profile, :action => :interests}, :class => 'organization-button' %>
-          <%= link_to _('currencies'), {:controller => :currency_plugin_myprofile, :action => :index}, :class => 'organization-button' if admin %>
-          <%= link_to _('sniffer'), {:controller => :sniffer_plugin_myprofile, :action => :search}, :class => 'organization-button' if admin %>
+          <%= link_to _('offers'), {:controller => :profile, :profile => profile.identifier, :action => :products}, :class => 'organization-button' %>
+          <%= link_to _('knowledges'), {:controller => :profile, :profile => profile.identifier, :action => :knowledges}, :class => 'organization-button' %>
+          <%= link_to _('interests'), {:controller => :profile, :profile => profile.identifier, :action => :interests}, :class => 'organization-button' %>
+          <%= link_to _('currencies'), {:controller => :currency_plugin_myprofile, :profile => profile.identifier, :action => :index}, :class => 'organization-button' if admin %>
+          <%= link_to _('sniffer'), {:controller => :sniffer_plugin_myprofile, :profile => profile.identifier, :action => :search}, :class => 'organization-button' if admin %>
         </span>
 
         <div class="clean"></div>
