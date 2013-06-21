@@ -262,7 +262,7 @@ label, .formlabel {
   color: black;
 }
 
-input[type=text], .formfield input[type=text],
+input[type=text] input[type=password], .formfield input[type=text], .formfield input[type=password],
 textarea, .formfield textarea {
   width: $module3;
   padding: ($half-padding - $border) ($padding - $border);
