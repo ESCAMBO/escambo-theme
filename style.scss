@@ -839,6 +839,10 @@ body.template-leftbar .box-1 {
     border: $border solid $color-profile-info-border;
     background: $color-profile-info-bg;
 
+    h4 {
+      padding: 0;
+    }
+
     .info, .evaluation, .members {
       border-bottom: $border solid $color-profile-info-border;
       padding-bottom: $padding;
@@ -846,6 +850,7 @@ body.template-leftbar .box-1 {
     }
 
     .info {
+
       .state, .city, .address, .phone1, .phone2, .email, .site {
         float: none;
         clear: both;
