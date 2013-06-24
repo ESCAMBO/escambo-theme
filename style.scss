@@ -719,40 +719,46 @@ body.template-leftbar .box-1 {
 /* Profile block */
 
 .escambo-plugin-profile-block {
-  width: $module2;
+  width: $module2 - $padding;
   border: 3px double #7F0085;
   margin-bottom: $margin;
   margin-right: $half-margin;
+  border-radius: 3px;
+
+    .exchange_button{
+      position:absolute; 
+      bottom: -$base;
+      right: $base
+    }
 
     .categories-area{
       @extend .area;
       @extend .pstyle-tm1;
-      height: $base*6;
+      height: $base*3;
     }
 
     a.profile_homepage_link{
       @extend .area;      
-      height: $base*9;
+      height: $base*4;
       display: block;
+      margin: 2*$base $base;
     }
 
     .location-area{
       @extend .area;
       @extend .pstyle-tm1;
-      height: $base*6;
+      height: $base*3;
       display: block;
     }
 
     .summary-area{
       @extend .area;
       @extend .pstyle-tm2;
-      height: $base*4;      
+      height: $base;      
     }
 
     .area{
-      width: $module2 - ($base*2);
-      margin-top: $base*2;
-      margin-left: $base;
+      margin: 2*$base $base;
     }
 
     .dotted-border-bottom {
@@ -761,17 +767,22 @@ body.template-leftbar .box-1 {
   
 
   .image-profile-area{
-    width: $module2;
-    height: $base*15;
+/*     width: $module2 - ($base*2); */
+    height: $base*12;
+    position: relative;
+    padding-top:4px;
+    background-position: center;
+    background-size: $base*12;
+    background-repeat: no-repeat;
 
     .escambo-plugin-exchange-icons{
-      width: $base*4;
+/*       width: $base*4; */
       height: $base*2;
       margin-left: $module2 -($base*4);
 
       .has-exchanged{
         @extend .icon;
-        background: url($image-exchange);
+        background: url($image-exchange) no-repeat;
       }
 
       .has-not-exchanged{
