@@ -650,6 +650,9 @@ body.template-leftbar .box-1 {
   .first-column {
     width: $module2;
     margin-right: $margin;
+    min-height: $module;
+    background-size: $module;
+    background-position: center;
 
     .label {
       text-transform: uppercase;
