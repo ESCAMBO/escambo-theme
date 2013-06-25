@@ -1,6 +1,4 @@
-@import "base";
-@import "exchange";
-@import "sniffer";
+@import "escambo";
 
 /* Colors */
 
@@ -22,10 +20,9 @@ $color-profile-info-border: #C5AAA5;
 $color-footer-bg: #FFF386;
 
 /* Images */
+$image-escambo-big: '/designs/themes/escambo/images/escambo-big.png';
+$image-escambo-small: '/designs/themes/escambo/images/escambo-small.png';
 $image-zoom: '/designs/themes/escambo/images/lupa.png';
-$image-heart-empty: '/designs/themes/escambo/images/heart-empty.png';
-$image-exchange: '/designs/themes/escambo/images/troca_simbolo.png';
-$image-exchange-empty: '/designs/themes/escambo/images/troca_simbolo_vazio.png';
 
 .icon {
   width: $base*2.5;        
@@ -395,26 +392,31 @@ body.template-leftbar .box-1 {
 #theme-header {
   position: relative;
 
+  #logo {
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+  }
+
   .logged {
-    h1 {
-      font-size: 100px;
-      margin-top: 40px;
-      margin-bottom: 40px;
+    #logo {
+      background: url($image-escambo-small);
+      width: 403px;
+      height: 71px;
     }
     #user .not-logged-in, #header-links { 
       margin-top: 4*$base;
     }
-    .user-logged-right {
-      height: 4*$base + $padding;
-    }
   }
-
   .not-logged {
-    h1 {
-      font-size: 135px;
+    #logo {
+      background: url($image-escambo-big);
+      width: 696px;
+      height: 123px;
+      margin-top: 2.5*$base;
     }
     #user .not-logged-in, #header-links { 
-      margin-top: 120px;
+      margin-top: 10*$base;
     }
   }
 
@@ -476,6 +478,7 @@ body.template-leftbar .box-1 {
 
       .user-logged-right {
         float: right;
+        height: 4*$base + $padding;
         padding: $padding - $border;
         font-weight: bold;
         text-align: left;
@@ -701,99 +704,8 @@ body.template-leftbar .box-1 {
 #search-results {
   li.search-profile-item {
     display: inline-block;
-  }
-
-  /*place here all background and border combinations */
-  .inside-border-purple {
-     border-color:#7F0085;
-  }
-  .bg-purple {
-    background-color:#F3E1EF;
-  }
-}
-/*end*/
-
-/* Profile block */
-
-.escambo-plugin-profile-block {
-  width: $module2;
-  border: 3px double #7F0085;
-  margin-bottom: $margin;
-  margin-right: $half-margin;
-
-    .categories-area{
-      @extend .area;
-      @extend .pstyle-tm1;
-      height: $base*6;
-    }
-
-    a.profile_homepage_link{
-      @extend .area;      
-      height: $base*9;
-      display: block;
-    }
-
-    .location-area{
-      @extend .area;
-      @extend .pstyle-tm1;
-      height: $base*6;
-      display: block;
-    }
-
-    .summary-area{
-      @extend .area;
-      @extend .pstyle-tm2;
-      height: $base*4;      
-    }
-
-    .area{
-      width: $module2 - ($base*2);
-      margin-top: $base*2;
-      margin-left: $base;
-    }
-
-    .dotted-border-bottom {
-      border-bottom: 1px dotted #000000;
-    }
-  
-
-  .image-profile-area{
-    width: $module2;
-    height: $base*15;
-
-    .escambo-plugin-exchange-icons{
-      width: $base*4;
-      height: $base*2;
-      margin-left: $module2 -($base*4);
-
-      .has-exchanged{
-        @extend .icon;
-        background: url($image-exchange);
-      }
-
-      .has-not-exchanged{
-        @extend .icon;
-        background: url($image-exchange-empty);
-      }
-
-      .is-bookmarked{}
-
-      .isnot-bookmarked{
-        background: url($image-heart-empty);
-      }
-    }
-
-    .profile-image {      
-      width: $module2;
-      height: $base*14;      
-      margin-top: -($base*2);
-    }   
-  }
-
-  .exchange-button {
-    @extend .exchange-action-button;    
-    margin-top: -28px;
-    margin-left: $base;
+    margin-bottom: $margin;
+    margin-right: $half-margin;
   }
 }
 
@@ -905,4 +817,20 @@ p.menu_g_selecionado {
   line-height: 0;
 }
 
+/* Signup */
+
+#signup-form {
+
+  h1 {
+    padding: 0;
+  }
+
+  .help-text {
+    @extend .pstyle-tp1;
+  }
+}
+#content #signup-form .submit {
+  @extend .action-button;
+  @extend .pstyle-tp1;
+}
 

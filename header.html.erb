@@ -1,5 +1,5 @@
 <div id="theme-header-wrap" class="<%= user ? 'logged' : 'not-logged' %>">
-  <h1>escambo</h1>
+  <div id="logo"></div>
 
   <%= javascript_include_tag '/designs/themes/escambo/escambo.js' %>
 
@@ -18,14 +18,18 @@
             <%= profile_image user, :portrait, :class => 'profile-image' %>
           </a>
         </span>
+
         <span class="user-logged-right">
           <div>
             <%= link_to user.name, :controller => :profile_editor, :profile => user.identifier, :action => :edit %>
+
+            <% task_count = Task.to(user).pending.count %>
+            <%= link_to task_count.to_s, {:controller => :tasks, :profile => user.identifier}, :id => 'pending-tasks-count', :title => _("Manage your pending tasks") %>
           </div>
           <div>
-            <%= select "enterprise", "selected", user.memberships.collect{ |p| [ p.name, p.id ] },
-              {:selected => session[:active_organization]},
-              :onclick => "jQuery.post('#{url_for :controller => :account, :action => :select_active_organization}', {profile_id: this.value});" %>
+            <%= select "enterprise", "selected", user.memberships.collect{ |p| [ p.name, p.id ] } + [[_('New enterprise'), 'new']],
+              {:selected => session[:active_organization]}, :id => 'select-organization',
+              :onclick => "escambo_theme.user.select('#{url_for :controller => :escambo_plugin_myprofile, :profile => user.identifier, :action => :select_active_organization}', '#{url_for :controller => :escambo_plugin_myprofile, :profile => user.identifier, :action => :new_enterprise}')" %>
           </div>
           <div>
             <%= link_to _('Log out'), :controller => :account, :action => :logout %>
@@ -33,6 +37,7 @@
         </span>
       <% end %>
     </span>
+
     <span class='not-logged-in' style='display: none'>
       <%= link_to _('sign up'), :controller => 'account', :action => 'signup' %>
       <%= thickbox_inline_popup_link _('login'), login_url, 'inlineLoginBox', :id => 'link_login' %>
