@@ -1,4 +1,5 @@
-<% if profile and (profile != @active_organization or active_organization) %>
+<% if (@active_organization or profile) and (@active_organization != profile) %>
+  <% profile = @active_organization if active_organization %>
 
   <div id="profile-line-wrap-1" class="<%= active_organization ? 'active-organization' : 'profile-header' %>">
     <div id="profile-line-wrap-2">
