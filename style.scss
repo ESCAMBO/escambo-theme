@@ -820,6 +820,10 @@ p.menu_g_selecionado {
   line-height: 0;
 }
 
+.evaluations{
+  display: inline-block;
+}
+
 /* Signup */
 
 #signup-form {
@@ -836,4 +840,3 @@ p.menu_g_selecionado {
   @extend .action-button;
   @extend .pstyle-tp1;
 }
-
