@@ -259,18 +259,17 @@ label, .formlabel {
   color: black;
 }
 
-input[type=text] input[type=password], .formfield input[type=text], .formfield input[type=password],
-textarea, .formfield textarea {
+input[type=text], input[type=password], textarea,
+.formfield input[type=text], .formfield input[type=password], .formfield textarea {
   width: $module3;
   padding: ($half-padding - $border) ($padding - $border);
-  text-indent: 0;
   margin-bottom: $half-margin;
-
+  text-indent: 0;
+  color: inherit;
   background: none;
   border: $border solid #999;
   border-radius: 3px;
   @extend .pstyle-field;
-  color: inherit;
 }
 
 .controller-content_viewer .no-boxes, .controller-profile .no-boxes {
