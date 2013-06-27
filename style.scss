@@ -195,6 +195,13 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  color: black;
+  &:visited, &:active, &:hover {
+    color: black;
+  }
+}
+
 h1, #content h1 {
   @extend .pstyle-h1;
   text-align: left;
@@ -478,6 +485,11 @@ body.template-leftbar .box-1 {
 
         select {
           width: $module2;
+          
+          option[value=new] {
+            font-weight: bold;
+            background: #ddd;
+          }
         }
       }
     }
@@ -581,9 +593,6 @@ body.template-leftbar .box-1 {
 /* Buttons and inputs */
 
 .action-button {
-  @extend .exchange-action-button;
-}
-.exchange-action-button {
   @extend .pstyle-button-small;
 }
 
