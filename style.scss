@@ -5,17 +5,7 @@
 $color-h2: #7E005D;
 $color-h3: #394E41;
 
-$color-interest-bg: #F3F5ED;
-$color-interest-label: #79A458;
-$color-knowledge-bg: #FCF0EE;
-$color-knowledge-label: #C37169;
-$color-offer-bg: #F1F1F7;
-$color-offer-label: #677FB7;
-
 $color-search-bg: #FAF7DC;
-
-$color-profile-info-bg: #EBF49D;
-$color-profile-info-border: #C5AAA5;
 
 $color-footer-bg: #FFF386;
 
@@ -612,77 +602,6 @@ body.template-leftbar .box-1 {
   }
 }
 
-/* Snippets */
-
-.cms-learning-plugin-learning-snippet {
-  background: $color-knowledge-bg;
-  border: $border dotted $color-knowledge-label;
-  .label {
-    background: $color-knowledge-label;
-  }
-}
-.product-snippet {
-  background: $color-offer-bg;
-  border: $border solid $color-offer-label;
-  border-radius: 5px;
-  .label {
-    background: $color-offer-label;
-  }
-}
-.sniffer-plugin-interest-snippet {
-  background: $color-interest-bg;
-  border: $border dashed $color-interest-label;
-  .label {
-    background: $color-interest-label;
-  }
-}
-
-.escambo-snippet {
-  padding: $padding - $border;
-  margin-bottom: $half-margin;
-  min-height: 7*$base;
-  position: relative;
-
-  .first-column, .second-column, .third-column {
-    float: left;
-  }
-  .first-column {
-    width: $module2;
-    margin-right: $margin;
-    min-height: $module;
-    background-size: $module;
-    background-position: center;
-
-    .label {
-      text-transform: uppercase;
-      padding: $padding;
-      margin: -($padding - $border);
-      color: white;
-      display: inline-block;
-    }
-  }
-  .second-column {
-    width: $module6;
-    margin-right: $margin;
-
-    .descripxion, .local {
-      margin-top: $margin;
-      @extend .pstyle-tm2;
-    }
-  }
-  .third-column {
-    width: $module2;
-    margin-bottom: $margin;
-  }
-
-  .exchange {
-    position: absolute;
-    bottom: $padding;
-    right: $padding;
-  }
-
-}
-
 /* Search */
 
 #escambo-search-form {
@@ -712,88 +631,6 @@ body.template-leftbar .box-1 {
 }
 
 /* end */
-
-#escambo-enterprise-items {
-  float: left;
-  width: $module7 + $padding;
-  margin-right: $half-margin;
-
-  h3 {
-    display: inline-block;
-    padding-left: $padding;
-  }
-  .see-all {
-    @extend .pstyle-tm1;
-  }
-  .add {
-    margin-right: $half-margin;
-  }
-
-  #offers {
-  }
-
-  .escambo-snippet {
-    .second-column {
-      width: $module3;
-    }
-    .third-column {
-      width: $module2 - $padding;
-    }
-  }
-}
-#escambo-enterprise-info {
-  float: left;
-  
-  h3 {
-    visibility: hidden;
-  }
-  .sidebar { 
-    width: $module3;
-    padding: $padding - $border;
-    border: $border solid $color-profile-info-border;
-    background: $color-profile-info-bg;
-
-    h4 {
-      padding: 0;
-    }
-
-    .info, .evaluation, .members {
-      border-bottom: $border solid $color-profile-info-border;
-      padding-bottom: $padding;
-      margin-bottom: $padding;
-    }
-
-    .info {
-
-      .state, .city, .address, .phone1, .phone2, .email, .site {
-        float: none;
-        clear: both;
-        margin-bottom: $margin;
-      }
-      .state, .city, .phone1, .phone2 {
-        float: left;
-        clear: none;
-        display: inline-block;
-        width: $module;
-      }
-      .state, .phone1 {
-        margin-right: $margin;
-      }
-      .city {
-        width: $module2;
-      }
-
-      .label {
-        font-weight: bold;
-      }
-
-      .contact-button a {
-        @extend .exchange-action-button;
-        display: block;
-      }
-    }
-  }
-}
 
 /* Sniffer */
 .action-sniffer_plugin_myprofile-search {
@@ -839,16 +676,4 @@ p.menu_g_selecionado {
 #content #signup-form .submit {
   @extend .action-button;
   @extend .pstyle-tp1;
-}
-
-#knowledges {
-  margin-top: 4*$base
-}
-
-#offers {
-  margin-top: 4*$base
-}
-
-#interests {
-  margin-top: 4*$base
 }

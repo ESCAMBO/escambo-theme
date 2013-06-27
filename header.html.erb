@@ -27,8 +27,9 @@
             <%= link_to task_count.to_s, {:controller => :tasks, :profile => user.identifier}, :id => 'pending-tasks-count', :title => _("Manage your pending tasks") %>
           </div>
           <div>
-            <%= select "enterprise", "selected", user.memberships.collect{ |p| [ p.name, p.id ] } + [[_('New enterprise'), 'new']],
-              {:selected => session[:active_organization]}, :id => 'select-organization',
+            <%= select_tag "enterprise[selected]",
+              options_for_select(user.memberships.collect{ |p| [ p.name, p.id ] } + [[_('New enterprise'), 'new']], session[:active_organization]),
+              :id => 'select-organization',
               :onclick => "escambo_theme.user.select('#{url_for :controller => :escambo_plugin_myprofile, :profile => user.identifier, :action => :select_active_organization}', '#{url_for :controller => :escambo_plugin_myprofile, :profile => user.identifier, :action => :new_enterprise}')" %>
           </div>
           <div>
