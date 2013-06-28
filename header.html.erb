@@ -1,3 +1,13 @@
+<% content_for :active_organization do %>
+    <%= render :file => 'profile_line', :locals => {:profile => @active_organization, :active_organization => true} %>
+<% end %>
+
+<% content_for :profile_line do %>
+  <% if profile %>
+    <%= render :file => 'profile_line', :locals => {:profile => profile, :active_organization => false} %>
+  <% end %>
+<% end %>
+
 <div id="theme-header-wrap" class="<%= user ? 'logged' : 'not-logged' %>">
   <div id="logo"></div>
 
@@ -7,7 +17,7 @@
     <%= link_to _('home'), '/' %>
     <%= link_to _('culture points'), :controller => :search, :action => :enterprises %>
     <%= link_to _('offers, knowledges and interests'), :controller => :search, :action => :index %>
-    <%= link_to _('how it works'), '#' %>
+    <%= link_to _('how it works'), :controller => :home, :action => :how_it_works %>
   </div>
 
   <div id="user">

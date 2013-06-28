@@ -5,6 +5,11 @@
 $color-h2: #7E005D;
 $color-h3: #394E41;
 
+$color-user-logged-bg: #FAF7DC;
+
+$color-header-button: #F6FCA6;
+$color-header-button-highlight: $color-violet;
+
 $color-search-bg: #FAF7DC;
 
 $color-footer-bg: #FFF386;
@@ -372,7 +377,7 @@ body.template-leftbar .box-1 {
 .header-button {
   display: inline-block;
   padding: $padding;
-  background: #F6FCA6;
+  background: $color-header-button;
   margin-right: $half-padding;
   margin-bottom: $padding;
   font-weight: bold;
@@ -380,7 +385,7 @@ body.template-leftbar .box-1 {
   color: black;
 
   &:hover {
-    background: #7F005C;
+    background: $color-header-button-highlight;
     color: white;
   }
 }
@@ -457,7 +462,7 @@ body.template-leftbar .box-1 {
         @extend .container-clean;
         border: $border solid black;
         border-top: none;
-        background: #FAF7DC;
+        background: $color-user-logged-bg;
       }
       .logged-in, .not-logged-in {
         display: block;
@@ -571,7 +576,7 @@ body.template-leftbar .box-1 {
 
 #theme-footer {
   background: $color-footer-bg;
-  height: 310px;
+  height: 26*$base;
   width: 100%;
   margin: 0;
   /* FIXME missing top shadow */
@@ -589,6 +594,17 @@ body.template-leftbar .box-1 {
 }
 
 /* end */
+
+/* Home */
+#presentation-wrap-1 {
+
+  #presentation-wrap-2 {
+
+    #presentation {
+      @extend .pstyle-tp1;
+    }
+  }
+}
 
 /* Buttons and inputs */
 
