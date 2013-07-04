@@ -618,11 +618,20 @@ input[type=text], input[type=password], textarea,
   }
 }
 
+.search-results-header {
+  padding-left: $padding;
+}
 #search-results {
+  padding-left: $padding;
+
   li.search-profile-item {
     display: inline-block;
-    margin-bottom: $margin;
-    margin-right: $half-margin;
+    margin-top: $half-margin;
+
+    .escambo-plugin-profile-block {
+      margin-bottom: 0;
+      margin-right: $half-margin;
+    }
   }
 }
 
