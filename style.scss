@@ -5,7 +5,8 @@
 $color-h2: #7E005D;
 $color-h3: #394E41;
 
-$color-user-logged-bg: #FAF7DC;
+$color-user-bg: #FAF7DC;
+$color-user-border: #C5AAA5;
 
 $color-header-button: #F6FCA6;
 $color-header-button-highlight: $color-violet;
@@ -178,6 +179,8 @@ $image-zoom: '/designs/themes/escambo/images/lupa.png';
 body {
   @extend .pstyle-none;
   background: none;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
 }
 
@@ -412,9 +415,9 @@ input[type=text], input[type=password], textarea,
 
       .logged-in {
         @extend .container-clean;
-        border: $border solid black;
+        border: $border solid $color-user-border;
         border-top: none;
-        background: $color-user-logged-bg;
+        background: $color-user-bg;
       }
       .logged-in, .not-logged-in {
         display: block;
