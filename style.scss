@@ -5,7 +5,8 @@
 $color-h2: #7E005D;
 $color-h3: #394E41;
 
-$color-user-logged-bg: #FAF7DC;
+$color-user-bg: #FAF7DC;
+$color-user-border: #C5AAA5;
 
 $color-header-button: #F6FCA6;
 $color-header-button-highlight: $color-violet;
@@ -99,97 +100,78 @@ $image-zoom: '/designs/themes/escambo/images/lupa.png';
 .pstyle-h1 {
   font-family: 'RobotoRegular';
   font-size: 34px;
-  line-height: 34px;
 }
 .pstyle-h2 {
   font-family: 'RobotoCondensed';
   font-size: 26px;
-  line-height: 26px;
 }
 .pstyle-h3 {
   font-family: 'RobotoBlack';
   font-size: 21px;
-  line-height: 21px;
 }
 .pstyle-h4 {
   font-family: 'RobotoBold';
   font-size: 16px;
-  line-height: 16px;
 }
 .pstyle-h5 {
   font-family: 'RobotoBlack';
   font-size: 13px;
-  line-height: 13px;
 }
 .pstyle-title-section {
   font-family: 'RobotoCondensed';
   font-size: 92px;
-  line-height: 92px;
 }
 .pstyle-field {
   font-family: 'RobotoRegular'; /* FIXME CourierNew */
   font-size: 13px;
-  line-height: 13px;
 }
 .pstyle-menu-big-selected {
   font-family: 'RobotoBoldCondensed';
   font-size: 21px;
-  line-height: 21px;
 }
 .pstyle-menu-big-unselected {
   font-family: 'RobotoCondensed';
   font-size: 21px;
-  line-height: 21px;
 }
 .pstyle-menu-medium-selected {
   font-family: 'RobotoBoldCondensed';
   font-size: 16px;
-  line-height: 16px;
 }
 .pstyle-menu-medium-unselected {
   font-family: 'RobotoCondensed';
   font-size: 16px;
-  line-height: 16px;
 }
 .pstyle-menu-small-selected {
   font-family: 'RobotoBoldCondensed';
   font-size: 13px;
-  line-height: 13px;
 }
 .pstyle-menu-small-unselected {
   font-family: 'RobotoCondensed';
   font-size: 13px;
-  line-height: 13px;
 }
 .pstyle-tp4 {
   font-family: 'RobotoRegular';
   font-size: 42px;
-  line-height: 42px;
 }
 .pstyle-tp3 {
   font-family: 'RobotoRegular';
   font-size: 34px;
-  line-height: 34px;
 }
 .pstyle-tp2 {
   font-family: 'RobotoRegular';
   font-size: 26px;
-  line-height: 26px;
 }
 .pstyle-tp1 {
   font-family: 'RobotoRegular';
   font-size: 21px;
-  line-height: 21px;
 }
 .pstyle-tm1 {
   font-family: 'RobotoRegular';
   font-size: 13px;
-  line-height: 13px;
 }
 .pstyle-tm2 {
   font-family: 'RobotoRegular';
   font-size: 10px;
-  line-height: 10px;
 }
 
 /* Overwrites and general styles */
@@ -197,6 +179,8 @@ $image-zoom: '/designs/themes/escambo/images/lupa.png';
 body {
   @extend .pstyle-none;
   background: none;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
 }
 
@@ -249,8 +233,6 @@ th, td {
 }
 
 #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
-  margin: 0;
-  padding: 0 $padding;
   margin-bottom: $half-margin;
 }
 
@@ -431,9 +413,9 @@ input[type=text], input[type=password], textarea,
 
       .logged-in {
         @extend .container-clean;
-        border: $border solid black;
+        border: $border solid $color-user-border;
         border-top: none;
-        background: $color-user-logged-bg;
+        background: $color-user-bg;
       }
       .logged-in, .not-logged-in {
         display: block;
