@@ -1,3 +1,6 @@
+<%= javascript_include_tag '/designs/themes/escambo/javascripts/escambo.js' %>
+<%= javascript_include_tag '/designs/themes/escambo/javascripts/jquery.cookie.js' %>
+
 <% content_for :active_organization do %>
   <%= render :file => 'profile_line', :locals => {:profile => @active_organization, :active_organization => true} %>
 <% end %>
@@ -10,8 +13,6 @@
 
 <div id="theme-header-wrap" class="<%= user ? 'logged' : 'not-logged' %>">
   <div id="logo"></div>
-
-  <%= javascript_include_tag '/designs/themes/escambo/escambo.js' %>
 
   <div id='header-links'>
     <%= link_to _('home'), '/' %>
