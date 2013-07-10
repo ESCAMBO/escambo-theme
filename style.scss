@@ -235,17 +235,9 @@ input[type=text], input[type=password], textarea,
 .controller-content_viewer .no-boxes, .controller-profile .no-boxes {
   margin: 0;
 }
-.controller-search #search-column-left {
-  display: none;
-}
-.controller-search #search-column-right {
-  float: none;
-  width: auto;
-}
-
-/* end */
 
 /* Fix to 960px effective content */
+
 #theme-header,
 #profile-line-wrap-2,
 #wrap-1,
@@ -290,8 +282,6 @@ input[type=text], input[type=password], textarea,
   background: transparent;
   padding: 0;
 }
-
-/* end */
 
 /* Theme structure */
 
@@ -401,8 +391,8 @@ input[type=text], input[type=password], textarea,
         float: left;
 
         .profile-image {
-          height: 7*$base;
           width: 7*$base;
+          height: 7*$base;
         }
       }
 
@@ -439,9 +429,9 @@ input[type=text], input[type=password], textarea,
   margin-bottom: $margin;
 
   &.active-organization {
-    $image-size: 4*$base;
 
-    img {
+    $image-size: 4*$base;
+    .profile-image {
       float: left;
       margin-right: $half-margin;
       margin-top: -$half-padding;
@@ -458,16 +448,16 @@ input[type=text], input[type=password], textarea,
   }
 
   &.profile-header {
-    $image-size: 10*$base;
     padding-right: $padding;
 
     #profile-line-wrap-2 {
       width: 100%;
     }
+
+    $image-size: 10*$base;
     margin-top: ($image-size/2 - $height/2) + $half-margin;
     margin-bottom: ($image-size/2 - $height/2) + $half-margin;
-
-    img {
+    .profile-image {
       float: right;
       margin-left: $half-margin;
       margin-top: -($image-size/2 - $height/2);
@@ -545,8 +535,6 @@ input[type=text], input[type=password], textarea,
   }
 }
 
-/* end */
-
 /* Home */
 #presentation-wrap-1 {
 
@@ -578,45 +566,6 @@ input[type=text], input[type=password], textarea,
     @extend .sniffer-search-submit;
   }
 }
-
-/* Search */
-
-#escambo-search-form {
-  @extend .search-box;
-  margin: -$padding;
-  margin-top: $margin;
-  margin-bottom: $margin;
-
-  form {
-    .search-field {
-      #search-input {
-        @extend .search-input;
-      }
-      input[type=submit] {
-        @extend .search-submit;
-      }
-    }
-  }
-}
-
-.search-results-header {
-  padding-left: $padding;
-}
-#search-results {
-  padding-left: $padding;
-
-  li.search-profile-item {
-    display: inline-block;
-    margin-top: $half-margin;
-
-    .escambo-plugin-profile-block {
-      margin-bottom: 0;
-      margin-right: $half-margin;
-    }
-  }
-}
-
-/* end */
 
 /* Sniffer */
 .action-sniffer_plugin_myprofile-search {
