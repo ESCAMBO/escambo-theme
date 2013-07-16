@@ -437,6 +437,9 @@ input[type=text], input[type=password], textarea,
       margin-top: -$half-padding;
       width: $image-size;
       height: $image-size;
+      .inner {
+        background-position: 0 0;
+      }
     }
     .profile-name {
       float: left;
