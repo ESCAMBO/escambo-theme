@@ -427,6 +427,8 @@ input[type=text], input[type=password], textarea,
   height: $height;
   padding: $half-padding 0;
   margin-bottom: $margin;
+  position: relative;
+  z-index: 30;
 
   &.active-organization {
 
