@@ -226,7 +226,7 @@ input[type=text], input[type=password], textarea,
   margin-bottom: $half-margin;
   text-indent: 0;
   color: inherit;
-  background: none;
+  background: white;
   border: $border solid #999;
   border-radius: 3px;
   @extend .pstyle-field;
