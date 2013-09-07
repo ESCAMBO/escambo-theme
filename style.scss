@@ -221,7 +221,7 @@ label, .formlabel {
 
 input[type=text], input[type=password], textarea,
 .formfield input[type=text], .formfield input[type=password], .formfield textarea {
-  width: $module3;
+  width: $module03;
   padding: ($half-padding - $border) ($padding - $border);
   margin-bottom: $half-margin;
   text-indent: 0;
@@ -408,7 +408,7 @@ input[type=text], input[type=password], textarea,
         }
 
         select {
-          width: $module2;
+          width: $module02;
           
           option[value=new] {
             font-weight: bold;
