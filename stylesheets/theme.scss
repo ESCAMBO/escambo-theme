@@ -500,7 +500,7 @@ input[type=text], input[type=password], textarea,
 
 #theme-footer {
   background: $color-footer-bg;
-  height: 26*$base;
+  height: 40*$base;
   width: 100%;
   margin: 0;
   /* FIXME missing top shadow */
@@ -514,6 +514,11 @@ input[type=text], input[type=password], textarea,
   }
   #footer-devel b, #footer-support {
     color: $color-exchange;
+  }
+
+  img {
+    vertical-align: middle;
+    margin-right: 30px;
   }
 
   #test-disclaimer {

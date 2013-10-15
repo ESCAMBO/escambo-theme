@@ -1733,7 +1733,7 @@ input[type=text], input[type=password], textarea,
 
 #theme-footer {
   background: #fff386;
-  height: 312px;
+  height: 480px;
   width: 100%;
   margin: 0;
   /* FIXME missing top shadow */ }
@@ -1744,6 +1744,9 @@ input[type=text], input[type=password], textarea,
     /* FIXME */ }
   #theme-footer #footer-devel b, #theme-footer #footer-support {
     color: #394e41; }
+  #theme-footer img {
+    vertical-align: middle;
+    margin-right: 30px; }
   #theme-footer #test-disclaimer {
     display: none;
     /* show by javascript depending on cookie */
