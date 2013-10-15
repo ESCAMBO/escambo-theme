@@ -40,8 +40,7 @@
           <div>
             <%= select_tag "enterprise[selected]",
               options_for_select(user.memberships.collect{ |p| [ p.name, p.id ] } + [[_('New enterprise'), 'new']], cookies[:active_organization]),
-              :id => 'select-organization',
-              :onclick => "escambo_theme.user.select('#{url_for :controller => :escambo_plugin_myprofile, :profile => user.identifier, :action => :select_active_organization}', '#{url_for :controller => :escambo_plugin_myprofile, :profile => user.identifier, :action => :new_enterprise}')" %>
+              :id => 'select-organization', :onchange => "escambo_theme.user.select()", :onkeyup => "escambo_theme.user.select()" %>
           </div>
           <div>
             <%= link_to _('Log out'), :controller => :account, :action => :logout %>
@@ -63,3 +62,10 @@
   </div>
   <div class="clean"></div>
 </div>
+
+<% javascript_tag do %>
+  <% if user %>
+    escambo_theme.user.select_organization_url = '<%= url_for :controller => :escambo_plugin_myprofile, :profile => user.identifier, :action => :select_active_organization %>';
+    escambo_theme.user.new_enterprise_url = '<%= url_for :controller => :escambo_plugin_myprofile, :profile => user.identifier, :action => :new_enterprise %>';
+  <% end %>
+<% end %>
