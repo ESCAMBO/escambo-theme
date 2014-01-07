@@ -2,12 +2,12 @@
 <%= javascript_include_tag '/designs/themes/escambo/javascripts/jquery.cookie.js' %>
 
 <% content_for :active_organization do %>
-  <%= render :file => 'profile_line', :locals => {:profile => @active_organization, :active_organization => true} %>
+  <%= render :file => "#{Rails.root}/public/designs/themes/escambo/profile_line.html.erb", :locals => {:profile => @active_organization, :active_organization => true} %>
 <% end %>
 
 <% content_for :profile_line do %>
   <% if profile %>
-    <%= render :file => 'profile_line', :locals => {:profile => profile, :active_organization => false} %>
+    <%= render :file => "#{Rails.root}/public/designs/themes/escambo/profile_line.html.erb", :locals => {:profile => @active_organization, :active_organization => true} %>
   <% end %>
 <% end %>
 
