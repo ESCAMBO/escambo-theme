@@ -7,7 +7,7 @@
 
 <% content_for :profile_line do %>
   <% if profile %>
-    <%= render :file => "#{Rails.root}/public/designs/themes/escambo/profile_line.html.erb", :locals => {:profile => @active_organization, :active_organization => false} %>
+    <%= render :file => "#{Rails.root}/public/designs/themes/escambo/profile_line.html.erb", :locals => {:profile => profile, :active_organization => false} %>
   <% end %>
 <% end %>
 
