@@ -1,4 +1,4 @@
 name: "ESCAMBO"
 layout: "escambo"
-jquery_theme: "smoothness_mod"
-icon_theme: [default, pidgin]
+jquery_theme: "smoothness"
+icon_theme: [awesome, pidgin]
