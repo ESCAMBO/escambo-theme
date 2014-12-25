@@ -1,4 +1,5 @@
 @import "escambo";
+@import "../base/signup";
 
 /* Colors */
 
@@ -21,7 +22,7 @@ $image-escambo-small: '/designs/themes/escambo/images/escambo-small.png';
 $image-zoom: '/designs/themes/escambo/images/lupa.png';
 
 .icon {
-  width: $base*2.5;        
+  width: $base*2.5;
   height: $base*2.5;
   border: none; /* overwrite application.css */
 }
@@ -33,7 +34,7 @@ $image-zoom: '/designs/themes/escambo/images/lupa.png';
 
 /* Fonts */
 
-@font-face { 
+@font-face {
   font-family: 'RobotoBold';
   src: url('fonts/roboto-bold.eot');
   src: url('fonts/roboto-bold.eot?#iefix') format('embedded-opentype'),
@@ -42,7 +43,7 @@ $image-zoom: '/designs/themes/escambo/images/lupa.png';
        url('fonts/roboto-bold.svg#webfont') format('svg');
 }
 
-@font-face { 
+@font-face {
   font-family: 'RobotoCondensed';
   src: url('fonts/roboto-condensed-webfont.eot');
   src: url('fonts/roboto-condensed-webfont.eot?#iefix') format('embedded-opentype'),
@@ -50,7 +51,7 @@ $image-zoom: '/designs/themes/escambo/images/lupa.png';
        url('fonts/roboto-condensed-webfont.ttf') format('truetype'),
        url('fonts/roboto-condensed-webfont.svg#webfont') format('svg');
 }
-@font-face { 
+@font-face {
   font-family: 'RobotoRegular';
   src: url('fonts/roboto-regular.eot');
   src: url('fonts/roboto-regular.eot?#iefix') format('embedded-opentype'),
@@ -58,7 +59,7 @@ $image-zoom: '/designs/themes/escambo/images/lupa.png';
        url('fonts/roboto-regular.ttf') format('truetype'),
        url('fonts/roboto-regular.svg#webfont') format('svg');
 }
-@font-face { 
+@font-face {
   font-family: 'RobotoBoldCondensed';
   src: url('fonts/roboto-boldcondensed.eot');
   src: url('fonts/roboto-boldcondensed.eot?#iefix') format('embedded-opentype'),
@@ -66,7 +67,7 @@ $image-zoom: '/designs/themes/escambo/images/lupa.png';
        url('fonts/roboto-boldcondensed.ttf') format('truetype'),
        url('fonts/roboto-boldcondensed.svg#webfont') format('svg');
 }
-@font-face { 
+@font-face {
   font-family: 'RobotoBlack';
   src: url('fonts/roboto-black.eot');
   src: url('fonts/roboto-black.eot?#iefix') format('embedded-opentype'),
@@ -332,7 +333,7 @@ input[type=text], input[type=password], textarea,
       width: 403px;
       height: 71px;
     }
-    #user .not-logged-in, #header-links { 
+    #user .not-logged-in, #header-links {
       margin-top: 4*$base;
     }
   }
@@ -343,7 +344,7 @@ input[type=text], input[type=password], textarea,
       height: 123px;
       margin-top: 2.5*$base;
     }
-    #user .not-logged-in, #header-links { 
+    #user .not-logged-in, #header-links {
       margin-top: 10*$base;
     }
   }
@@ -364,7 +365,7 @@ input[type=text], input[type=password], textarea,
     &.not-logged {
     }
 
-    #header-links { 
+    #header-links {
       float: left;
 
       a {
@@ -374,7 +375,7 @@ input[type=text], input[type=password], textarea,
       }
     }
 
-    #user .not-logged-in a, #header-links a { 
+    #user .not-logged-in a, #header-links a {
       @extend .header-button;
     }
 
@@ -417,7 +418,7 @@ input[type=text], input[type=password], textarea,
 
         select {
           width: $module02;
-          
+
           option[value=new] {
             font-weight: bold;
             background: #ddd;
@@ -589,7 +590,7 @@ input[type=text], input[type=password], textarea,
 .action-sniffer_plugin_myprofile-search {
   #profile-line-wrap-1 {
     margin-bottom: 0;
-    
+
     img.profile-image {
       z-index: 1000;
       position: relative;
