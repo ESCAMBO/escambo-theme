@@ -2,12 +2,12 @@
 <%= javascript_include_tag '/designs/themes/escambo/javascripts/jquery.cookie.js' %>
 
 <% content_for :active_organization do %>
-  <%= render :file => "#{Rails.root}/public/designs/themes/escambo/profile_line.html.erb", :locals => {:profile => @active_organization, :active_organization => true} %>
+  <%= render file: "#{Rails.root}/public/designs/themes/escambo/profile_line.html.erb", locals: {profile: @active_organization, active_organization: true} %>
 <% end %>
 
 <% content_for :profile_line do %>
   <% if profile %>
-    <%= render :file => "#{Rails.root}/public/designs/themes/escambo/profile_line.html.erb", :locals => {:profile => profile, :active_organization => false} %>
+    <%= render file: "#{Rails.root}/public/designs/themes/escambo/profile_line.html.erb", locals: {profile: profile, active_organization: false} %>
   <% end %>
 <% end %>
 
@@ -16,47 +16,46 @@
 
   <div id='header-links'>
     <%= link_to _('home'), '/' %>
-    <%= link_to _('culture points'), :controller => :search, :action => :enterprises %>
-    <%= link_to _('offers, knowledges and interests'), :controller => :search, :action => :index %>
-    <%# link_to _('how it works'), :controller => :home, :action => :how_it_works %>
+    <%= link_to _('culture points'), controller: :search, action: :enterprises %>
+    <%= link_to _('offers, knowledges and interests'), controller: :search, action: :index %>
+    <%# link_to _('how it works'), controller: :home, action: :how_it_works %>
   </div>
 
   <div id="user">
-    <span class='logged-in' style='display: none;'>
-      <% if user %>
+    <% if user %>
+      <span class='logged-in'>
         <span class="user-logged-left">
-          <a href="<%= url_for :controller => :profile_editor, :profile => user.identifier, :action => :edit %>">
-            <%= profile_image user, :portrait, :class => 'profile-image' %>
+          <a href="<%= url_for controller: :profile_editor, profile: user.identifier, action: :edit %>">
+            <%= profile_image user, :portrait, class: 'profile-image' %>
           </a>
         </span>
 
         <span class="user-logged-right">
           <div>
-            <%= link_to user.name, :controller => :profile_editor, :profile => user.identifier, :action => :edit %>
+            <%= link_to user.name, controller: :profile_editor, profile: user.identifier, action: :edit %>
 
             <% task_count = Task.to(user).pending.count %>
-            <%= link_to task_count.to_s, {:controller => :tasks, :profile => user.identifier}, :id => 'pending-tasks-count', :title => _("Manage your pending tasks") %>
+            <%= link_to task_count.to_s, {controller: :tasks, profile: user.identifier}, id: 'pending-tasks-count', title: _("Manage your pending tasks") %>
           </div>
           <div>
             <%= select_tag "enterprise[selected]",
               options_for_select(user.memberships.collect{ |p| [ p.name, p.id ] } + [[_('New enterprise'), 'new']], cookies[:active_organization]),
-              :id => 'select-organization', :onchange => "escambo_theme.user.select()", :onkeyup => "escambo_theme.user.select()" %>
+              id: 'select-organization', onchange: "escambo_theme.user.select()", onkeyup: "escambo_theme.user.select()" %>
           </div>
           <div>
-            <%= link_to _('Log out'), :controller => :account, :action => :logout %>
+            <%= link_to _('Log out'), controller: :account, action: :logout %>
           </div>
         </span>
-      <% end %>
-    </span>
+      </span>
+    <% else %>
+      <span class='not-logged-in'>
+        <%= _("<span class='login'>%s</span>") % modal_inline_link_to('<i class="icon-menu-login"></i><strong>' + _('Login') + '</strong>', login_url, '#inlineLoginBox', :id => 'link_login') %>
+        <%= @plugins.dispatch(:alternative_authentication_link).collect { |content| instance_exec(&content) }.join("") %>
 
-    <span class='not-logged-in' style='display: none'>
-      <%= link_to _('sign up'), :controller => 'account', :action => 'signup' %>
-      <%= thickbox_inline_popup_link _('login'), login_url, 'inlineLoginBox', :id => 'link_login' %>
-    </span>
-
-    <div id='inlineLoginBox' style='display: none;'>
-      <%= render :file => 'account/login', :locals => { :is_thickbox => true } %>
-    </div>
+      <div id='inlineLoginBox' style='display: none;'>
+        <%= render :file => 'account/login', :locals => { :is_popin => true } %>
+      </div>
+    <% end %>
 
     <div class="clean"></div>
   </div>
@@ -65,7 +64,7 @@
 
 <% javascript_tag do %>
   <% if user %>
-    escambo_theme.user.select_organization_url = '<%= url_for :controller => :escambo_plugin_myprofile, :profile => user.identifier, :action => :select_active_organization %>';
-    escambo_theme.user.new_enterprise_url = '<%= url_for :controller => :escambo_plugin_myprofile, :profile => user.identifier, :action => :new_enterprise %>';
+    escambo_theme.user.select_organization_url = '<%= url_for controller: :escambo_plugin_myprofile, profile: user.identifier, action: :select_active_organization %>';
+    escambo_theme.user.new_enterprise_url = '<%= url_for controller: :escambo_plugin_myprofile, profile: user.identifier, action: :new_enterprise %>';
   <% end %>
 <% end %>
